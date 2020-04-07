@@ -1,0 +1,20 @@
+@import '../../variables'
+.search
+    position: relative
+    display: inline-flex
+.searchBar
+    min-width: 280px
+    height: 22px
+    background-color: $dark
+    border: none
+    outline: none
+    border-radius: 23px
+    padding: 9px 20px 9px 43px
+    color: $text 
+    position: relative
+    &::placeholder
+        coloe: $gray
+    &__icon
+        position: absolute
+        top: calc(50% - 9px)
+        left: 18px

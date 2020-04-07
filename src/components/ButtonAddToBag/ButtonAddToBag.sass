@@ -1,0 +1,25 @@
+@import '../../variables'
+.ButtonAddToBag
+    width: 36px
+    height: 36px
+    border-radius: 25px
+    outline: none
+    border: none
+    color: $primary
+    display: inline-flex
+    justify-content: center
+    background-color: $primary
+    filter: drop-shadow(0 0 4px rgba(239, 54, 81, .2))
+    &:active
+        outline: none
+        filter: none  
+    &-activated
+        background-color: $dark
+        filter: none
+    &-small
+        width: 160px
+        height: 36px
+    &__icon
+        fill: $white
+    &__icon-activated
+        fill: $primary

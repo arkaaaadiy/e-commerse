@@ -1,0 +1,26 @@
+@import '../../variables'
+.button
+    min-width: 100%
+    height: 48px
+    border-radius: 25px
+    outline: none
+    border: none
+    color: $text
+    display: inline-flex
+    justify-content: center
+    &:active
+        outline: none        
+    &-primary
+        background-color: $primary
+        filter: drop-shadow(0 0 4px rgba(239, 54, 81, .2))
+        &:active
+            filter: none
+    &-outline
+        background-color: inherit
+        border: 1px solid $white
+        &:active
+            border: 1px solid $gray
+            color: $gray
+    &-small
+        width: 160px
+        height: 36px

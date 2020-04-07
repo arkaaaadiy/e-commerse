@@ -1,0 +1,28 @@
+@import '../../variables'
+.ButtonLike
+    width: 36px
+    height: 36px
+    border-radius: 25px
+    outline: none
+    border: none
+    color: $primary
+    display: inline-flex
+    justify-content: center
+    background-color: $dark
+    box-shadow: 0 4px 12px rgba(18,18,18,0.4)
+    &:active
+        outline: none  
+        background-color: $primary
+        color: $dark 
+        svg:first-child
+            display: none
+        .ButtonLike__icon-pressed
+            display: block
+    &__icon
+        fill: $gray
+        &-activated
+            fill: $primary
+        &-pressed  
+            display: none        
+            fill: $dark                       
+        
