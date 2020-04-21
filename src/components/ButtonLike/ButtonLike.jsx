@@ -2,18 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ButtonLike.sass';
 import classNames from 'classnames';
-import { useState } from 'react';
 
 const ButtonLike = props => {
-	const { onClick } = props;
-	const [active, setActive] = useState(false);
-	const onClickLike = e => {
-		setActive(!active);
-		onClick && onClick(e);
-	};
+	const { onClick, active } = props;
+	
 	return (
 		<>
-			<button className={classNames('ButtonLike ', { 'ButtonLike-activated': active })} onClick={onClickLike}>
+			<button className={classNames('ButtonLike ', { 'ButtonLike-activated': active })} onClick={onClick}>
 				<svg
 					className={classNames('ButtonLike__icon', { 'ButtonLike__icon-activated': active })}
 					width='24'
@@ -49,6 +44,9 @@ const ButtonLike = props => {
 	);
 };
 
-ButtonLike.propTypes = {};
+ButtonLike.propTypes = {
+	onClick: PropTypes.func,
+	active: PropTypes.bool
+};
 
 export default ButtonLike;

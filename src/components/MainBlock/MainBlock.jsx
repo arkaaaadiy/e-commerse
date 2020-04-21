@@ -19,7 +19,9 @@ const MainBlock = props => {
 }
 
 MainBlock.propTypes = {
-
+    data: PropTypes.array,
+    title: PropTypes.string,
+    subtitle: PropTypes.string
 }
 
 export default MainBlock

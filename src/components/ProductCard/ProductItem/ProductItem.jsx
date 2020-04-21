@@ -74,6 +74,9 @@ const ProductItem = (props) => {
 	);
 };
 
-ProductItem.propTypes = {};
+ProductItem.propTypes = {
+	dataProduct: PropTypes.object,
+	catalog: PropTypes.bool
+};
 
 export default ProductItem;

@@ -51,6 +51,7 @@ const Topbar = props => {
 			if (el.label === label) {
 				el.current = true;
 			}
+			return el
 		});
 				
 		setMenu([...menu]);
@@ -67,6 +68,8 @@ const Topbar = props => {
 	);
 };
 
-Topbar.propTypes = {};
+Topbar.propTypes = {
+
+};
 
 export default Topbar;

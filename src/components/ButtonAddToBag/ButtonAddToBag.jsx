@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './ButtonAddToBag.sass';
 import classNames from 'classnames';
 
 const ButtonAddToBag = props => {
-	const { onClick, primary } = props;
-	const [activated, setActivated] = useState(false)
-	const onClickBag = (e) => {
-		onClick && onClick(e)
-		setActivated(!activated)
-	}
+	const { onClick, activated } = props;
+	
 	return (
 		<>
 			<button
@@ -17,7 +13,7 @@ const ButtonAddToBag = props => {
 					'ButtonAddToBag ',					
 					{ 'ButtonAddToBag-activated': activated }
 				)}
-				onClick={onClickBag}
+				onClick={onClick}
 			>
 				<svg className={classNames('ButtonAddToBag__icon', {'ButtonAddToBag__icon-activated' : activated})} width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 					<path
@@ -30,6 +26,10 @@ const ButtonAddToBag = props => {
 	);
 };
 
-ButtonAddToBag.propTypes = {};
+ButtonAddToBag.propTypes = {
+	onClick: PropTypes.func,
+	activated: PropTypes.bool,
+
+};
 
 export default ButtonAddToBag;

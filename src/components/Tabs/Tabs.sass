@@ -1,0 +1,23 @@
+@import '../../variables'
+.tabs
+    display: flex
+    justify-content: space-between
+    width: 100%    
+    .tab
+        position: relative
+        height: 44px
+        width: 125px
+        display: flex
+        justify-content: center
+        align-items: center
+        h3
+            font-size: 16px
+            font-weight: 400
+        &-active
+            &:after
+                content: ''
+                width: 125px
+                height: 3px
+                background-color: $primary
+                position: absolute
+                bottom: 0

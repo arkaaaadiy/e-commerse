@@ -13,7 +13,8 @@ const Labels = props => {
 }
 
 Labels.propTypes = {
-
+    discont: PropTypes.bool,
+    children: PropTypes.any
 }
 
 export default Labels

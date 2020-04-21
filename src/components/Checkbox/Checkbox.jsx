@@ -1,21 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Checkbox.sass'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Checkbox.sass';
 import classNames from 'classnames';
 
-const Checkbox = props => {
-    const {text, id, primary} = props
-    return (
-        <div>
-            <input id={id} className={classNames('checkbox', {'checkbox-primary': primary})} type="checkbox"/>
-            <label htmlFor={id}></label>
-            {text && <span className='checkbox__text'>{text}</span>}
-        </div>
-    )
-}
+const Checkbox = (props) => {
+	const { text, id, primary, value, onChangeValue, readOnly, className } = props;
+	return (
+		<div className={className} readOnly={readOnly}>
+			<input
+				id={id}
+				checked={value}
+				onChange={onChangeValue}
+				readOnly={readOnly}
+				className={classNames('checkbox', { 'checkbox-primary': primary })}
+				type='checkbox'
+			/>
+            
+			<label htmlFor={id}></label>
+			{text && <span className='checkbox__text'>{text}</span>}
+		</div>
+	);
+};
 
-Checkbox.propTypes = {
+Checkbox.propTypes = {};
 
-}
-
-export default Checkbox
+export default Checkbox;

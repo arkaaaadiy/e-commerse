@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Headling.sass';
+
 const Heading = props => {
-	const { children, search, title} = props;
-	return (<div>
+	const { children, search, title, className, onClick} = props;
+	return (<div className={className}>
 		<header>
-			<nav>
+			<nav onClick={onClick}>
 				<svg width='10' height='16' viewBox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
 					<path
 						fillRule='evenodd'
@@ -15,7 +16,7 @@ const Heading = props => {
 					/>
 				</svg>
 			</nav>
-			<div className='title'>{!title && children}</div>
+			<div className='header__title'>{!title && children}</div>
 			<div>
 				{search && (
 					<svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
