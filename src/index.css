@@ -53,10 +53,12 @@ h3{
 }
 .descriptiveItems{
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .description{
   font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.15px;
 }
 .helperText{
   font-size: 11px;

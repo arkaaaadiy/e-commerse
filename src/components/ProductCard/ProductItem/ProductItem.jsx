@@ -7,7 +7,7 @@ import Labels from '../../Label/Label';
 import ButtonLike from '../../ButtonLike/ButtonLike';
 
 const ProductItem = (props) => {
-	const { dataProduct, catalog } = props;
+	const { dataProduct, catalog, onClick } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 	return (
 		<div className='product-item'>
@@ -66,7 +66,7 @@ const ProductItem = (props) => {
 						<ButtonAddToBag />
 					</div>
 				)}
-                {catalog && <div className='product-item__btnbag product-item__btnbag-catalog'>
+                {catalog && <div onClick={onClick} className='product-item__btnbag product-item__btnbag-catalog'>
 						<ButtonLike />
 					</div>}
 			</div>

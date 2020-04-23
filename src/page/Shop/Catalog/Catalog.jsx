@@ -8,6 +8,7 @@ import photo from '../../../assets/image.jpg';
 import ProductList from '../../../components/ProductCard/ProductList/ProductList';
 import ProductItem from '../../../components/ProductCard/ProductItem/ProductItem';
 import { useState } from 'react';
+import SelectUp from '../../../components/SeletUp/SelectUp';
 
 const Catalog = (props) => {
 	const data = [
@@ -16,7 +17,7 @@ const Catalog = (props) => {
 			name: 'Pullover',
 			color: 'Black',
 			size: 'L',
-			price: '15',
+			price: '16',
 			brand: 'Mango',
 			rating: '4',
 			// discont: '30',
@@ -29,7 +30,7 @@ const Catalog = (props) => {
 			name: 'Pullover',
 			color: 'Black',
 			size: 'L',
-			price: '22',
+			price: '23',
 			brand: 'Mango',
 			rating: '4',
 			// discont: '30',
@@ -42,7 +43,7 @@ const Catalog = (props) => {
 			name: 'Pullover',
 			color: 'Black',
 			size: 'L',
-			price: '45',
+			price: '47',
 			brand: 'Mango',
 			rating: '3',
 			discont: '30',
@@ -90,7 +91,9 @@ const Catalog = (props) => {
 			// soldOut: true
 		},
 	];
+	const options = [{ name: 'XS' }, { name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }];
 	const [listShow, setListShow] = useState(false);
+	const [select, setSelect] = useState(false);
 	return (
 		<div>
 			<Heading className='container' search>
@@ -124,16 +127,23 @@ const Catalog = (props) => {
 			{listShow ? (
 				<div className='catalog__products-list container'>
 					{data.map((card) => (
-						<ProductList className='catalog__productItem' dataProduct={card} />
+						<ProductList key={card.name + card.price} className='catalog__productItem' catalog dataProduct={card} />
 					))}
 				</div>
 			) : (
 				<div className='catalog__products container'>
 					{data.map((card) => (
-						<ProductItem dataProduct={card} />
+						<ProductItem key={card.name + card.price} dataProduct={card} catalog onClick={() => setSelect(true)} />
 					))}
 				</div>
 			)}
+			<SelectUp
+				isShow={select}
+				onShow={() => setSelect(!select)}
+				options={options}
+				head='Size'
+				btn='add to card'
+			/>
 		</div>
 	);
 };

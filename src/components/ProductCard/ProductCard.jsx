@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import photo from '../../assets/photo.png'
+import photo from '../../assets/photo.png'
 import './ProductCard.sass'
 import ProductBag from './ProductBag/ProductBag'
 import ProductCatalog from './ProductCatalog/ProductCatalog'

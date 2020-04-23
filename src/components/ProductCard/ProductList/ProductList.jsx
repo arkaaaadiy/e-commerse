@@ -4,9 +4,10 @@ import './ProductList.sass';
 import Rating from '../../Rating/Rating';
 import ButtonAddToBag from '../../ButtonAddToBag/ButtonAddToBag';
 import Labels from '../../Label/Label';
+import ButtonLike from '../../ButtonLike/ButtonLike';
 
 const ProductList = (props) => {
-	const { dataProduct, className } = props;
+	const { dataProduct, className, catalog, onClick } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 	return (
 		<div className={className}>
@@ -45,20 +46,27 @@ const ProductList = (props) => {
 								<Rating stars={rating} voises={voises} />
 							</div>
 						</div>
-						<div className='product-list__close'>
-							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-								<path
-									opacity='0.54'
-									fillRule='evenodd'
-									clipRule='evenodd'
-									d='M18 7.2L16.8 6L12 10.8L7.2 6L6 7.2L10.8 12L6 16.8L7.2 18L12 13.2L16.8 18L18 16.8L13.2 12L18 7.2Z'
-									fill='#ABB4BD'
-								/>
-							</svg>
-						</div>
-						{!soldOut && (
+						{!catalog && (
+							<div className='product-list__close'>
+								<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+									<path
+										opacity='0.54'
+										fillRule='evenodd'
+										clipRule='evenodd'
+										d='M18 7.2L16.8 6L12 10.8L7.2 6L6 7.2L10.8 12L6 16.8L7.2 18L12 13.2L16.8 18L18 16.8L13.2 12L18 7.2Z'
+										fill='#ABB4BD'
+									/>
+								</svg>
+							</div>
+						)}
+						{!soldOut && !catalog && (
 							<div className='product-list__btnbag'>
 								<ButtonAddToBag />
+							</div>
+						)}
+						{catalog && (
+							<div onClick={onClick} className='product-list__btnbag product-list__btnbag-catalog'>
+								<ButtonLike />
 							</div>
 						)}
 					</div>

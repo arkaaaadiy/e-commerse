@@ -7,7 +7,7 @@ import { useState } from 'react';
 import SelectUp from '../../components/SeletUp/SelectUp';
 
 const Select = props => {
-    const {options, title, error, className} = props
+    const {options, title, error, className, btn} = props
     const [isShow, setShow] = useState(false)
     const onClickHandler = () => {
         setShow(!isShow)
@@ -16,13 +16,13 @@ const Select = props => {
         <>
         <div className={className} onClick={onClickHandler}>
             <div className={classNames('select', {'select-error': error})}>
-                <span>{title}</span>
+                <span className='descriptiveItems'>{title}</span>
                 <div >
                 <img src={iconDropDown} className='dropdown' alt="icon dropdown" />
                     </div>                                                                                                                      
             </div>            
         </div>
-        <SelectUp head={title} isShow={isShow} onShow={onClickHandler} options={options}/>
+        <SelectUp btn={btn} head={title} isShow={isShow} onShow={onClickHandler} options={options}/>
         </>
     )
 } 

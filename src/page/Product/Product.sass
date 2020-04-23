@@ -1,0 +1,43 @@
+@import '../../variables'
+.slider-photo
+    display: flex
+    overflow-x: scroll
+    height: 50vh
+    img
+        height: 50vh        
+        object-fit: cover
+        margin-right: 4px
+.product-selects
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 12px
+    padding-bottom: 12px
+.select-item
+    width: 40.6%
+.product-info
+    margin-top: 10px
+    position: relative
+    &__name
+        font-size: 11px
+        font-weight: 300
+        color: $gray
+        margin-bottom: 5px
+    &__pricing
+        position: absolute
+        top: 0
+        right: 0
+    &__description
+        margin-top: 10px
+.product-button
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0    
+    z-index: 5
+    padding: 20px 16px
+    background-color: $background
+.product-blockinfo
+    margin-top: 15px
+.product-page
+    margin-bottom: 30px

@@ -118,7 +118,7 @@ const Main = (props) => {
 	}
 	const main2 = (params) => {
 		return (
-			<div className="banner">
+			<div className="banner container">
 				<div className="banner__label"><h1>Street clothes</h1></div>
 				<div className="banner__bg">
 					<img src={smallbg} alt="main small background"/>
@@ -128,7 +128,7 @@ const Main = (props) => {
 	}
 	const main1 = (params) => {
 		return (
-			<div className='big-banner'>
+			<div className='big-banner container'>
 				<div className='big-banner__label'>
 					<h1 className='h1'>Fashion sale</h1>
 					<div className='big-banner__check'>
@@ -148,8 +148,10 @@ const Main = (props) => {
 			{main1()}
 			{/* {main2()} */}
 			{/* {main3()} */}
+			<div className="container">
 			<MainBlock title='New' subtitle='You’ve never seen it before!' data={data} />
 			<MainBlock title='Sale' subtitle='Super summer sale' data={data} />
+			</div>
 		</div>
 	);
 };

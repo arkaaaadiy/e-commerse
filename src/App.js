@@ -28,6 +28,8 @@ import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import Main from './page/Main/Main';
 // import Categories from './page/Shop/Categories/Categories';
 import Catalog from './page/Shop/Catalog/Catalog';
+import Product from './page/Product/Product';
+import Main from './page/Main/Main';
 
 function App() {
   // const options = [
@@ -58,8 +60,10 @@ function App() {
       {/* <Login /> */}
       {/* <ForgotPassword /> */}
       <main>
-        <Catalog />
-        <FiltersPage  />
+        {/* <Main/> */}
+        <Product/>
+        {/* <Catalog /> */}
+        {/* <FiltersPage  /> */}
       </main>     
       <Topbar/>
     </div>

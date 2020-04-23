@@ -5,8 +5,8 @@ import ButtonLike from '../../ButtonLike/ButtonLike';
 import Rating from '../../Rating/Rating';
 
 const ProductCatalog = (props) => {
-	const { data } = props;
-	const { name, price, brand } = data;
+	const { dataProduct } = props;
+	const { name, price, brand } = dataProduct;
 
 	return (
 		<div>

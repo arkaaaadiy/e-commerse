@@ -72,7 +72,8 @@ const FiltersPage = () => {
 								<div className='filtersProduct__tags filtersProduct__tags-cat'>
 									{category.map(el =><div className='filtersProduct__tag-cat'>
 										<Tag id={el.name} >{el.name} </Tag>
-									</div> )}
+									</div> )}							
+									
 								</div>
 							</div>
 						</div>
