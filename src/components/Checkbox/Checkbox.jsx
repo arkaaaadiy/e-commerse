@@ -22,6 +22,14 @@ const Checkbox = (props) => {
 	);
 };
 
-Checkbox.propTypes = {};
+Checkbox.propTypes = {
+	text: PropTypes.string,
+	id: PropTypes.string.isRequired,
+	primary: PropTypes.bool,
+	value: PropTypes.bool,
+	readOnly: PropTypes.bool,
+	className: PropTypes.string,
+	onChangeValue: PropTypes.func,	
+};
 
 export default Checkbox;

@@ -22,14 +22,16 @@ import './App.sass'
 // import SignUp from './containers/Auth/SignUp/SignUp';
 // import Login from './containers/Auth/Login/Login'
 // import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
-import Topbar from './components/Topbar/Topbar';
-import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
+// import Topbar from './components/Topbar/Topbar';
+// import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import photo from './assets/image.png';
 // import Main from './page/Main/Main';
 // import Categories from './page/Shop/Categories/Categories';
-import Catalog from './page/Shop/Catalog/Catalog';
-import Product from './page/Product/Product';
-import Main from './page/Main/Main';
+// import Catalog from './page/Shop/Catalog/Catalog';
+// import Product from './page/Product/Product';
+// import Main from './page/Main/Main';
+// import Bag from './page/Bag/Bag';
+import Checkout from './page/Сheckout/Сheckout'
 
 function App() {
   // const options = [
@@ -56,16 +58,20 @@ function App() {
   // ]
   return (
     <div className='App'>
+      <div className="container">
       {/* <SignUp /> */}
-      {/* <Login /> */}
+      {/* <Login /> */}      
+      </div>
       {/* <ForgotPassword /> */}
       <main>
+          <Checkout />
         {/* <Main/> */}
-        <Product/>
+        {/* <Product/> */}
+        {/* <Bag /> */}
         {/* <Catalog /> */}
         {/* <FiltersPage  /> */}
       </main>     
-      <Topbar/>
+      {/* <Topbar/> */}
     </div>
   )
 }

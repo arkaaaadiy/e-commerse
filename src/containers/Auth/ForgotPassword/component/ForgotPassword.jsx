@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Headling from '../../../../components/Heading/Heading';
-import InputText from '../../../../components/InputText/InputText';
+import InputText from '../../../../components/InputText';
 import '../../../Auth/auth.sass';
 import Button from '../../../../components/Button/Button';
 

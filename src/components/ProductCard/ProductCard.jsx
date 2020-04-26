@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import photo from '../../assets/photo.png'
 import './ProductCard.sass'
 import ProductBag from './ProductBag/ProductBag'
 import ProductCatalog from './ProductCatalog/ProductCatalog'
@@ -11,7 +10,7 @@ const ProductCard = props => {
     return (
         <div className='product-card'>
             <div className="product-card__img"> 
-                <img src={photo} alt="main img card"/>
+                <img src={dataProduct.photo} alt="main img card"/>
             </div>
             <div className="product-card__body">
                {variant === 'bag' && <ProductBag data={dataProduct} /> } 

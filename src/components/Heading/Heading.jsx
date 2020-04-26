@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './Headling.sass';
 
 const Heading = props => {
-	const { children, search, title, className, onClick} = props;
+	const { children, search, title, className, onClick, noback} = props;
 	return (<div className={className}>
 		<header>
-			<nav onClick={onClick}>
+			{!noback && <nav onClick={onClick}>
 				<svg width='10' height='16' viewBox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
 					<path
 						fillRule='evenodd'
@@ -15,7 +15,7 @@ const Heading = props => {
 						fill='#F7F7F7'
 					/>
 				</svg>
-			</nav>
+			</nav>}
 			<div className='header__title'>{!title && children}</div>
 			<div>
 				{search && (
@@ -28,7 +28,7 @@ const Heading = props => {
 				)}
 			</div>
 		</header>
-            {title && <p className='headling__title'>{children}</p>}
+            {title && <h1 className='headling__title'>{children}</h1>}
         </div>
 	);
 };
