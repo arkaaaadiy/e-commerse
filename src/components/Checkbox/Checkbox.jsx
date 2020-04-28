@@ -16,7 +16,7 @@ const Checkbox = (props) => {
 				type='checkbox'
 			/>
             
-			<label htmlFor={id}></label>
+			<label id={id} htmlFor={id}></label>
 			{text && <span className='checkbox__text'>{text}</span>}
 		</div>
 	);
