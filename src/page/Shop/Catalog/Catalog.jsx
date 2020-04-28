@@ -8,7 +8,9 @@ import photo from '../../../assets/image.jpg';
 import ProductList from '../../../components/ProductCard/ProductList/ProductList';
 import ProductItem from '../../../components/ProductCard/ProductItem/ProductItem';
 import { useState } from 'react';
-import SelectUp from '../../../components/SeletUp/SelectUp';
+import Select from '../../../components/Select/Select';
+import SlideDown from '../../../components/SlideDown/SlideDown';
+import SelectSize from '../../../components/Select/SelectSize/SelectSize';
 
 const Catalog = (props) => {
 	const data = [
@@ -137,13 +139,12 @@ const Catalog = (props) => {
 					))}
 				</div>
 			)}
-			<SelectUp
+			<SlideDown
 				isShow={select}
 				onShow={() => setSelect(!select)}
-				options={options}
-				head='Size'
-				btn='add to card'
-			/>
+			>
+				<SelectSize options={options} btn='add to card' />
+			</SlideDown>
 		</div>
 	);
 };

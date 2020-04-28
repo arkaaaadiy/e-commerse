@@ -23,14 +23,14 @@ import './App.sass'
 // import Login from './containers/Auth/Login/Login'
 // import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
 // import Topbar from './components/Topbar/Topbar';
-import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
+// import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import photo from './assets/image.png';
 // import Main from './page/Main/Main';
 // import Categories from './page/Shop/Categories/Categories';
 // import Catalog from './page/Shop/Catalog/Catalog';
 // import Product from './page/Product/Product';
 // import Main from './page/Main/Main';
-// import Bag from './page/Bag/Bag';
+import Bag from './page/Bag/Bag';
 import Checkout from './page/Сheckout/Сheckout'
 
 function App() {
@@ -67,9 +67,9 @@ function App() {
         {/* <Checkout /> */}
         {/* <Main/> */}
         {/* <Product/> */}
-        {/* <Bag /> */}
+        <Bag />
         {/* <Catalog /> */}
-        <FiltersPage  />
+        {/* <FiltersPage  /> */}
       </main>     
       {/* <Topbar/> */}
     </div>

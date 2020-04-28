@@ -9,6 +9,19 @@
     padding: 0 12px
     &-error
         border: 1px solid $error
+    &-size
+        &__head
+            text-align: center            
+        &__body
+            display: grid
+            grid-template-rows: repeat(2, 1fr)
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 22px
+            padding: 0 16px
+            margin: 24px 0
+        &__btn
+            margin-top: 28px
+            padding: 0 16px
 .options
     border: 1px solid $gray
     border-radius: 8px

@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import Checkbox from '../../../../components/Checkbox/Checkbox';
 
 const BrandItem = (props) => {
-	const { name, check, id } = props;
-	console.log('render');
+	const { name, check, id } = props;	
 
 	return (
 		<div id={id} className='brand__item'>

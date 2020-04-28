@@ -11,6 +11,7 @@ import Rating from '../../components/Rating/Rating';
 import Info from '../../components/Info/Info';
 import Button from '../../components/Button/Button';
 import MainBlock from '../../components/MainBlock/MainBlock';
+import SelectSize from '../../components/Select/SelectSize/SelectSize';
 
 const Product = (props) => {
 	const sizeOptions = [{ name: 'XS' }, { name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }];
@@ -90,10 +91,14 @@ const Product = (props) => {
 				<div className='container'>
 					<div className='product-selects'>
 						<div className='select-item'>
-							<Select title='Size' options={sizeOptions} btn='Select'></Select>
+							<Select title='Size'  btn='ADD TO CART'>
+							<SelectSize options={sizeOptions} btn='ADD TO CART' />
+							</Select>
 						</div>
 						<div className='select-item'>
-							<Select title='Color' options={colorOptions} btn='Select'></Select>
+							<Select title='Color'  >
+								<SelectSize options={colorOptions} btn='ADD TO CART' />
+							</Select>
 						</div>
 						<ButtonLike />
 					</div>

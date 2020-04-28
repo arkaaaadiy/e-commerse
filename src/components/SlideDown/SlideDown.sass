@@ -1,0 +1,52 @@
+@import '../../variables'
+.SlideDown   
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    background-color: rgba(0,0,0,0.3)
+    z-index: 1
+    overflow-y: hidden
+    &__wrapper
+        box-shadow: 0 -4px 24px 0 rgba(0,0,0,0.08)
+        z-index: 10
+        background-color: $background
+        width: 100%        
+        position: fixed
+        bottom: 0
+        left: 0
+        border-radius: 34px 34px 0 0
+        padding-top: 36px
+        padding-bottom: 36px        
+        justify-content: space-between
+        align-items: center
+        flex-direction: column
+        transition: transform .3s
+        transform: translateY(450px)
+        display: flex       
+        &-sort
+            height: 260px
+    &-show       
+        transform: translateY(1px)        
+    &__body
+        display: grid
+        grid-template-rows: repeat(2, 1fr)
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 22px
+    &__lineclose
+        position: absolute
+        top: 14px
+        width: 60px
+        height: 6px
+        border-radius: 3px
+        background-color: #979797    
+    &__head
+        font-size: 18px
+        font-weight: 500
+        line-height: 1.2
+        margin-bottom: 15px
+    &__btn
+        width: calc(100% - 32px)
+        padding: 0 16px
