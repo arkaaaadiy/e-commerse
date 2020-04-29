@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductList.sass';
-import Rating from '../../Rating/Rating';
-import ButtonAddToBag from '../../ButtonAddToBag/ButtonAddToBag';
-import Labels from '../../Label/Label';
-import ButtonLike from '../../ButtonLike/ButtonLike';
+import Rating from '../Rating/Rating';
+import ButtonAddToBag from '../ButtonAddToBag/ButtonAddToBag';
+import Labels from '../Label/Label';
+import ButtonLike from '../ButtonLike/ButtonLike';
 
 const ProductList = (props) => {
 	const { dataProduct, className, catalog, onClick } = props;

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './ButtonAdd.sass';
-import classNames from 'classnames';
 
 const ButtonAdd = props => {
 	const { onClick, sub } = props;
@@ -29,6 +28,8 @@ const ButtonAdd = props => {
 	);
 };
 
-ButtonAdd.propTypes = {};
+ButtonAdd.propTypes = {
+	onClick: PropTypes.func,
+};
 
 export default ButtonAdd;

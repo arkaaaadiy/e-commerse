@@ -23,39 +23,34 @@ import './App.sass'
 // import Login from './containers/Auth/Login/Login'
 // import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
 // import Topbar from './components/Topbar/Topbar';
-// import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
+import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import photo from './assets/image.png';
 // import Main from './page/Main/Main';
 // import Categories from './page/Shop/Categories/Categories';
-// import Catalog from './page/Shop/Catalog/Catalog';
-// import Product from './page/Product/Product';
-// import Main from './page/Main/Main';
+import Catalog from './page/Shop/Catalog/Catalog';
+import Product from './page/Product/Product';
+import Main from './page/Main/Main';
 import Bag from './page/Bag/Bag';
-// import Checkout from './page/Сheckout/Сheckout'
+import Checkout from './page/Сheckout/Сheckout'
+// import photo from './assets/image.jpg';
+// import ProductItem from './components/ProductItem/ProductItem';
+// import ProductList from './components/ProductList/ProductList';
 
 function App() {
-  // const options = [
-  //   {name: '12.5', value: '1'},
-  //   {name: '13', value: '2'},
-  //   {name: '13.5', value: '3'},
-  //   {name: '14', value: '4'}
-  // ]
-  // const options2 = [{name: 'XS'},{name: 'S'},{name: 'M'},{name: 'L'},{name: 'XL'},]
-  
-  // const colors = [
-  //   {color: '#020202'},
-  //   {color: '#F6F6F6'},
-  //   {color: '#F48117'},
-  //   {color: '#BEA9A9'},
-  //   {color: '#91BA4F'},
-  //   {color: '#2CB1B1'},
-  //   {color: '#020202'},
-  //   {color: '#F6F6F6'},
-  //   {color: '#F48117'},
-  //   {color: '#BEA9A9'},
-  //   {color: '#91BA4F'},
-  //   {color: '#2CB1B1'},
-  // ]
+  // const data = {
+  //   photo,
+  //   name: 'Pullover',
+  //   color: 'Black',
+  //   size: 'L',
+  //   price: '16',
+  //   brand: 'Mango',
+  //   rating: '4',
+  //   // discont: '30',
+  //   newItem: true,
+  //   // voises: '3'
+  //   // soldOut: true
+  // }
+
   return (
     <div className='App'>
       <div className="container">
@@ -63,11 +58,11 @@ function App() {
       {/* <Login /> */}      
       </div>
       {/* <ForgotPassword /> */}
-      <main>
+      <main>        
         {/* <Checkout /> */}
         {/* <Main/> */}
         {/* <Product/> */}
-        <Bag />
+        {/* <Bag /> */}
         {/* <Catalog /> */}
         {/* <FiltersPage  /> */}
       </main>     

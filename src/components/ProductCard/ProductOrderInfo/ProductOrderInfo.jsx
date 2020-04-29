@@ -2,8 +2,8 @@ import React from 'react'
 import './ProductOrderInfo.sass'
 
 const ProductOrderInfo = (props) => {
-    const { data } = props;
-    const { name, price, brand, color, size, units = '1' } = data;	
+    const { dataProduct } = props;
+    const { name, price, brand, color, size, units = '1' } = dataProduct;	
     
     return (
         <div>

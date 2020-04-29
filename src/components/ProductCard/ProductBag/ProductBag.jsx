@@ -5,8 +5,8 @@ import ButtonAdd from '../../ButtonAdd/ButtonAdd';
 import { useState } from 'react';
 
 const ProductBag = props => {
-	const { data } = props;
-	const { name, color, size, price } = data;
+	const { dataProduct } = props;
+	const { name, color, size, price } = dataProduct;
 	const [quantity, setQantity] = useState(1);
 
 	const chengeQuantity = operation => {

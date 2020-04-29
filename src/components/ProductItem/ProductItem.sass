@@ -1,10 +1,10 @@
-@import '../../../variables'
-.product-list
+@import '../../variables'
+.product-item
     display: flex
-    border-radius: 8px
-    max-height: 104px
-    background: $dark
+    flex-direction: column
+    border-radius: 8px       
     position: relative
+    width: 162px    
     .disablecard
         position: absolute
         background-color: $dark
@@ -15,46 +15,54 @@
         height: 100%
     .soldout
         position: absolute
-        bottom: -17px
+        bottom: 97px
+        padding: 5px 10px
         left: 0
-        color: $gray
+        color: $white
+        font-weight: 300
         font-size: 11px
-    &__wrapper
-        padding-left: 12px
-        padding-top: 12px       
-    &__img        
-        border-radius: 8px 0 0 8px
-        overflow: hidden
-        img
-            object-fit: cover
-            width: 104px
-            height: 104px
+        background-color: $dark
+        opacity: .7
     &__body
-        width: 239px
+        padding-top: 1px
+    &__img        
+        border-radius: 8px
+        overflow: hidden        
+        img
+            object-fit: cover    
+            max-height: 184px
+    &__rating
+        &-big
+            padding-top: 3px
+            display: block
+        &-small
+            display: none
     &__close
+        width: 24px
+        height: 24px
         position: absolute
-        top: 7px
-        right: 7px
+        top: 3px
+        right: 3px
     &__btnbag
         position: absolute
-        bottom: -10px
+        bottom: 78px
         right: 0
+        &-catalog
+            bottom: 60px
     &__brand
         font-size: 11px
         color: $gray
         margin-bottom: 1px
     &__name
-        margin-bottom: 3px
+        
     &__sizeColor
-        display: flex
-        margin-bottom: 17px
+        display: flex        
         font-size: 11px
     &__item
         color: $gray
         &:first-child
             margin-right: 13px
-    &__priceRating
-        width: 181px
+    &__priceRating        
         display: flex
         align-items: center
         justify-content: space-between
@@ -69,6 +77,7 @@
         position: absolute
         top: 5px
         left: 5px
-
-.colorWhite
-    color: $white
+.pb5
+    padding-bottom: 5px
+.pb3
+    padding-bottom: 3px

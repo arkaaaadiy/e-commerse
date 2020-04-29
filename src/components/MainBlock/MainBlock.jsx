@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ProductItem from '../ProductCard/ProductItem/ProductItem'
+import ProductItem from '../ProductItem/ProductItem'
 import './MainBlock.sass'
 
 const MainBlock = props => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductCatalog.sass';
-import ButtonLike from '../../ButtonLike/ButtonLike';
-import Rating from '../../Rating/Rating';
+import ButtonLike from '../ButtonLike/ButtonLike';
+import Rating from '../Rating/Rating';
 
 const ProductCatalog = (props) => {
 	const { dataProduct } = props;

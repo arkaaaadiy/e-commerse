@@ -5,10 +5,9 @@ import Filters from '../../../components/Filters/Filters';
 import Tag from '../../../components/Tag/Tag';
 import './Catalog.sass';
 import photo from '../../../assets/image.jpg';
-import ProductList from '../../../components/ProductCard/ProductList/ProductList';
-import ProductItem from '../../../components/ProductCard/ProductItem/ProductItem';
+import ProductList from '../../../components/ProductList/ProductList';
+import ProductItem from '../../../components/ProductItem/ProductItem';
 import { useState } from 'react';
-import Select from '../../../components/Select/Select';
 import SlideDown from '../../../components/SlideDown/SlideDown';
 import SelectSize from '../../../components/Select/SelectSize/SelectSize';
 
