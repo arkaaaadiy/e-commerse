@@ -1,0 +1,42 @@
+@import '../../variables'
+.promocode
+    background-color: $dark
+    border-radius: 8px
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__percent
+        width: 80px
+        height: 80px
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: $hot
+        position: relative
+        &-black
+            color: $background
+    &__number
+        z-index: 3
+    &__code
+        margin-top: 5px
+        font-weight: 300
+    &__apply
+        text-align: center
+        padding: 0 15px
+    &__time
+        color: $gray
+        font-size: 11px
+        margin-bottom: 10px
+        font-weight: 300
+    &__off
+        height: 32px
+        font-weight: 700
+        z-index: 3
+    &__bg
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 0

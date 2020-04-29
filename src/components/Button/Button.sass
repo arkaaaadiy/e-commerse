@@ -12,9 +12,10 @@
         outline: none        
     &-primary
         background-color: $primary
-        filter: drop-shadow(0 0 4px rgba(239, 54, 81, .2))
+        box-shadow: 0 4px 8px 0px rgba(211,38,38,.25)
         &:active
-            filter: none
+            box-shadow: none
+            opacity: .9
     &-outline
         background-color: inherit
         border: 1px solid $white
@@ -22,5 +23,4 @@
             border: 1px solid $gray
             color: $gray
     &-small
-        width: 160px
         height: 36px

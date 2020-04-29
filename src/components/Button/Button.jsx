@@ -4,7 +4,7 @@ import './Button.sass';
 import classNames from 'classnames';
 
 const Button = (props) => {
-	const { children, onClick, primary = 'true', outline, small, className } = props;
+	const { children, onClick, primary = 'true', outline, small } = props;
 	return (
 		<>
 			<button

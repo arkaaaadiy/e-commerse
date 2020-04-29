@@ -31,7 +31,7 @@ import './App.sass'
 // import Product from './page/Product/Product';
 // import Main from './page/Main/Main';
 import Bag from './page/Bag/Bag';
-import Checkout from './page/Сheckout/Сheckout'
+// import Checkout from './page/Сheckout/Сheckout'
 
 function App() {
   // const options = [
