@@ -15,7 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-h1,h2,h3,h4,p,span, div {
+h1,h2,h3,h4,p,span, div,button, a {
   font-family: 'Metropolis';
 }
 h1{
@@ -28,6 +28,10 @@ h2{
 }
 h3{
   font-size: 18px;
+  font-weight: 500;
+}
+h5{
+  font-size: 16px;
   font-weight: 500;
 }
 .h1{
