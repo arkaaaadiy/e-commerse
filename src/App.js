@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.sass'
+import Profile from './page/Profile/Profile';
 // import Headling from './components/Heading/Heading'
 // import InputText from './components/InputText/InputText'
 // import SearchBar from './components/SearchBar/SearchBar'
@@ -22,16 +23,17 @@ import './App.sass'
 // import SignUp from './containers/Auth/SignUp/SignUp';
 // import Login from './containers/Auth/Login/Login'
 // import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
-// import Topbar from './components/Topbar/Topbar';
-import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
+import Topbar from './components/Topbar/Topbar';
+import MyOrders from './page/MyOrders/MyOrders';
+// import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import photo from './assets/image.png';
 // import Main from './page/Main/Main';
 // import Categories from './page/Shop/Categories/Categories';
-import Catalog from './page/Shop/Catalog/Catalog';
-import Product from './page/Product/Product';
-import Main from './page/Main/Main';
-import Bag from './page/Bag/Bag';
-import Checkout from './page/Сheckout/Сheckout'
+// import Catalog from './page/Shop/Catalog/Catalog';
+// import Product from './page/Product/Product';
+// import Main from './page/Main/Main';
+// import Bag from './page/Bag/Bag';
+// import Checkout from './page/Сheckout/Сheckout'
 // import photo from './assets/image.jpg';
 // import ProductItem from './components/ProductItem/ProductItem';
 // import ProductList from './components/ProductList/ProductList';
@@ -58,7 +60,10 @@ function App() {
       {/* <Login /> */}      
       </div>
       {/* <ForgotPassword /> */}
-      <main>        
+      <main>  
+         <MyOrders/>
+        {/* <Profile />     */}
+        {/* <Categories />   */}
         {/* <Checkout /> */}
         {/* <Main/> */}
         {/* <Product/> */}
@@ -66,7 +71,7 @@ function App() {
         {/* <Catalog /> */}
         {/* <FiltersPage  /> */}
       </main>     
-      {/* <Topbar/> */}
+      <Topbar />
     </div>
   )
 }

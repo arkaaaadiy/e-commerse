@@ -9,6 +9,7 @@ const Tabs = (props) => {
 		<div className='tabs'>
 			{tabs.map((tab) => (
 				<div
+					key={tab.name}
 					onClick={() => onClick(tab.name)}
 					className={classNames('tab', { 'tab-active': currentTab === tab.name ? true : false })}
 				>
