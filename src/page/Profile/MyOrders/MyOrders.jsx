@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './MyOrders.sass';
-import Heading from '../../components/Heading/Heading';
-import Tag from '../../components/Tag/Tag';
-import OrderCard from '../../components/OrderCard/OrderCard';
+import Heading from '../../../components/Heading/Heading';
+import Tag from '../../../components/Tag/Tag';
+import OrderCard from '../../../components/OrderCard/OrderCard';
 
 const MyOrders = (props) => {
     const data = {

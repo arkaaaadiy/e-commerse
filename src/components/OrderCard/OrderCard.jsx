@@ -12,7 +12,7 @@ const OrderCard = (props) => {
 			<div className='order-card__item'>
 				<div className='order-card__title'>
 					<h5 className='order-card__order-number'>Order №{number}</h5>
-					<div className='order-card__date'>{date} 05-12-2019</div>
+					<div className='order-card__date'>{date}</div>
 				</div>
 			</div>
 			<div className='order-card__item'>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.sass'
-import Profile from './page/Profile/Profile';
+// import Profile from './page/Profile/MyProfile/Profile';
 // import Headling from './components/Heading/Heading'
 // import InputText from './components/InputText/InputText'
 // import SearchBar from './components/SearchBar/SearchBar'
@@ -24,7 +24,8 @@ import Profile from './page/Profile/Profile';
 // import Login from './containers/Auth/Login/Login'
 // import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
 import Topbar from './components/Topbar/Topbar';
-import MyOrders from './page/MyOrders/MyOrders';
+import MyOrders from './page/Profile/MyOrders/MyOrders';
+import OrderDetails from './page/Profile/OrderDetails/OrderDetails';
 // import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
 // import photo from './assets/image.png';
 // import Main from './page/Main/Main';
@@ -34,25 +35,61 @@ import MyOrders from './page/MyOrders/MyOrders';
 // import Main from './page/Main/Main';
 // import Bag from './page/Bag/Bag';
 // import Checkout from './page/Сheckout/Сheckout'
-// import photo from './assets/image.jpg';
+import photo from './assets/image.jpg';
 // import ProductItem from './components/ProductItem/ProductItem';
 // import ProductList from './components/ProductList/ProductList';
 
 function App() {
-  // const data = {
-  //   photo,
-  //   name: 'Pullover',
-  //   color: 'Black',
-  //   size: 'L',
-  //   price: '16',
-  //   brand: 'Mango',
-  //   rating: '4',
-  //   // discont: '30',
-  //   newItem: true,
-  //   // voises: '3'
-  //   // soldOut: true
-  // }
-
+  const dataproduct = {
+    photo,
+    name: 'Pullover',
+    color: 'Black',
+    size: 'L',
+    price: '16',
+    brand: 'Mango',
+    rating: '4',
+    // discont: '30',
+    newItem: true,
+    // voises: '3'
+    // soldOut: true
+  }
+  const data = {
+    number: '1947034', 
+    date: '05-12-2019', 
+    traking: 'IW3475453455', 
+    quantity: '3', 
+    total: '112', 
+    deliverStatus: 'Delivered',
+    products: [
+      {
+        photo,
+        name: 'Pullover',
+        color: 'Black',
+        size: 'L',
+        price: '51',
+        brand: 'Mango',
+        units: '1'
+      },
+      {
+        photo,
+        name: 'Pullover',
+        color: 'Black',
+        size: 'L',
+        price: '51',
+        brand: 'Mango',
+        units: '1'
+      },
+      {
+        photo,
+        name: 'Pullover',
+        color: 'Black',
+        size: 'L',
+        price: '51',
+        brand: 'Mango',
+        units: '1'
+      },
+    ]
+}
   return (
     <div className='App'>
       <div className="container">
@@ -61,7 +98,8 @@ function App() {
       </div>
       {/* <ForgotPassword /> */}
       <main>  
-         <MyOrders/>
+        <OrderDetails data={data} />
+         {/* <MyOrders/> */}
         {/* <Profile />     */}
         {/* <Categories />   */}
         {/* <Checkout /> */}

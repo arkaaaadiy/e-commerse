@@ -1,10 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import Avatar from '../../components/Avatar/Avatar'
-import Heading from '../../components/Heading/Heading';
+import Avatar from '../../../components/Avatar/Avatar'
+import Heading from '../../../components/Heading/Heading';
 import './Profile.sass'
-import avatar from '../../assets/avatar.png';
-import ProfileLink from '../../components/ProfileLink/ProfileLink';
+import avatar from '../../../assets/avatar.png';
+import ProfileLink from '../../../components/ProfileLink/ProfileLink';
 
 const Profile = props => {
     return (
