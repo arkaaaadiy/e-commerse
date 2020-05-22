@@ -13,6 +13,7 @@ import profileActiv from '../../assets/icon/profile-activeited.svg';
 import './Topbar.sass';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { useHistory, useLocation } from 'react-router-dom';
 
 // const menus = [
 // 	{ src: home, srcActive: homeActiv, label: 'Home', current: true },
@@ -22,14 +23,21 @@ import classNames from 'classnames';
 // 	{ src: profile, srcActive: profileActiv, label: 'Profile', current: false }
 // ];
 const Topbar = props => {	
+	let location = useLocation();
+	location.pathname.slice(0, 1)	
+	let history = useHistory()
 	const [menu, setMenu] = useState([
-		{ src: home, srcActive: homeActiv, label: 'Home', current: true },
-		{ src: cart, srcActive: cartActiv, label: 'Shop', current: false },
-		{ src: bag, srcActive: bagActiv, label: 'Bag', current: false },
-		{ src: heart, srcActive: heartActiv, label: 'Favorites', current: false },
-		{ src: profile, srcActive: profileActiv, label: 'Profile', current: false }
+		{ src: home, srcActive: homeActiv, label: 'Home' },
+		{ src: cart, srcActive: cartActiv, label: 'Shop' },
+		{ src: bag, srcActive: bagActiv, label: 'Bag' },
+		{ src: heart, srcActive: heartActiv, label: 'Favorites'},
+		{ src: profile, srcActive: profileActiv, label: 'Profile'}
 	]);
 
+	let path = location.pathname
+	let initialState = path[1].toUpperCase() + path.slice(2)
+
+	const [activeLink, setActiveLink] = useState(initialState)
 	const topbarLink = (src, srcActive, label, current) => {
 		return (
 			<div key={label} className='topbar__item' onClick={() => chengePage(label)}>
@@ -44,24 +52,34 @@ const Topbar = props => {
 	
 
 	const chengePage = label => {
-		menu.map(el => {
-			if (el.current === true) {
-				el.current = false;
-			}
-			if (el.label === label) {
-				el.current = true;
-			}
-			return el
-		});
-				
-		setMenu([...menu]);
+		setActiveLink(label)
+		switch (label) {
+			case menu[0].label:
+				history.push('home')
+				break
+			case menu[1].label:
+				history.push('shop')
+				break;
+			case menu[2].label:
+				history.push('bag')
+				break;
+			case menu[3].label:
+				history.push('favorites')
+				break;
+			case menu[4].label:
+				history.push('profile')	
+				break;	
+			default:
+				break;
+		}
+		
 	};
 
 	return (
 		<>
 			<div className='topbar'>
 				<div className='topbar__wrapper'>
-					{menu.map(el => topbarLink(el.src, el.srcActive, el.label, el.current))}
+					{menu.map(el => topbarLink(el.src, el.srcActive, el.label, el.label === activeLink ))}
 				</div>
 			</div>
 		</>
