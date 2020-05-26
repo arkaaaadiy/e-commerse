@@ -36,11 +36,13 @@ import Product from './page/Product/Product';
 import Bag from './page/Bag/Bag';
 // import Checkout from './page/Сheckout/Сheckout'
 import photo from './assets/image.jpg';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import AuthLayout from './hoc/AuthLayout';
 // import ProductItem from './components/ProductItem/ProductItem';
 // import ProductList from './components/ProductList/ProductList';
 
 function App() {
+  const isAuthenticated = true
   const dataproduct = {
     photo,
     name: 'Pullover',
@@ -91,35 +93,41 @@ function App() {
       },
     ]
 }
+
+  let routes = (
+    <AuthLayout>
+    <Switch>
+      <Route path='/signup' component={SignUp}></Route>
+      <Route path='/signin' component={Login}></Route>
+      <Route path='/forgotpassword'component={ForgotPassword}></Route>  
+      <Redirect to='/signin'/>   
+    </Switch> 
+    </AuthLayout>  
+  )
+
+  if (isAuthenticated) {
+   routes = ( 
+   <>
+   <main>  
+      <Switch>
+      <Route path='/filter' component={FiltersPage} />
+      <Route path='/shop' component={Categories} />
+      <Route path='/catalog' component={Catalog} />
+      <Route path='/order-details' ><OrderDetails data={data} /></Route>
+      <Route path='/profile' component={Profile} />
+      <Route path='/product' component={Product} />
+      <Route path='/bag' component={Bag} />
+      <Route path='/' component={Main} />
+      <Redirect to='/'/>
+      </Switch> 
+    </main> 
+      <Topbar />
+    </>
+    )
+  }
   return (
     <div className='App'>
-      
-      <main>  
-      <Switch>
-        <Route path='/signin' component={SignUp} />
-        <Route path='/signup' component={Login} />
-        <Route path='/forgotpassword' component={ForgotPassword} />
-        <Route path='/filter' component={FiltersPage} />
-        <Route path='/shop' component={Categories} />
-        <Route path='/catalog' component={Catalog} />
-        <Route path='/order-details' ><OrderDetails data={data} /></Route>
-        <Route path='/profile' component={Profile} />
-        <Route path='/product' component={Product} />
-        <Route path='/bag' component={Bag} />
-        <Route path='/' component={Main} />
-      </Switch> 
-        
-        {/* <MyOrders/> */}
-        {/* <Profile />     */}
-        {/* <Categories />   */}
-        {/* <Checkout /> */}
-        {/* <Main/> */}
-        {/* <Product/> */}
-        {/* <Bag /> */}
-        {/* <Catalog /> */}
-        {/* <FiltersPage  /> */}
-      </main>     
-      <Topbar />
+        {routes}  
     </div>
   )
 }

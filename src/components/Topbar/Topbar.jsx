@@ -34,8 +34,8 @@ const Topbar = props => {
 		{ src: profile, srcActive: profileActiv, label: 'Profile'}
 	]);
 
-	let path = location.pathname
-	let initialState = path[1].toUpperCase() + path.slice(2)
+	let path = location.pathname	
+	let initialState = path !== '/' ? path[1].toUpperCase() + path.slice(2) : 'Home'
 
 	const [activeLink, setActiveLink] = useState(initialState)
 	const topbarLink = (src, srcActive, label, current) => {

@@ -4,6 +4,7 @@ import Headling from '../../../components/Heading/Heading';
 import InputText from '../../../components/InputText';
 import '../../Auth/auth.sass';
 import Button from '../../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
 	return (
@@ -15,7 +16,7 @@ const SignUp = (props) => {
 				<InputText className='auth__input' label='Email' />
 				<InputText className='auth__input' label='Password' type='password' />
 
-				<a href='/' className='auth__link'>
+				<Link to='/forgotpassword' className='auth__link'>
 					<p className='descriptiveItems'>Forgot your password?</p>
 					<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 						<path
@@ -23,7 +24,7 @@ const SignUp = (props) => {
 							fill='#EF3651'
 						/>
 					</svg>
-				</a>
+				</Link>
 
 				<div className='auth__btn'>
 					<Button>LOGIN</Button>

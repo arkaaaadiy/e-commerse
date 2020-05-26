@@ -1,5 +1,5 @@
 const initialState = {
-
+    token: ''
 }
 
 export const appReducer = (state = initialState, action) => {
