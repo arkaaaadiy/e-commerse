@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Heading from '../../components/Heading/Heading';
 import './Bag.sass';
 import photo1 from '../../assets/bag1.png';
@@ -107,6 +107,8 @@ const Bag = (props) => {
 	);
 };
 
-Bag.propTypes = {};
+Bag.propTypes = {
+	
+};
 
 export default Bag;

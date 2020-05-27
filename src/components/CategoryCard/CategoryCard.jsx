@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import './CategoryCard.sass'
 
 const CategoryCard = props => {   
-    const {title, photo} = props 
+    const {title, photo, onClick, tabname} = props 
     return (
-        <div className='category-card'>
+        <div onClick={onClick} data-id={title} data-tabname={tabname} className='category-card'>
             <div className="category-card__title">
                 <span>{title}</span>
             </div>

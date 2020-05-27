@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './SlideDown.sass';
-import Info from '../Info/Info';
-import Button from '../Button/Button';
-import Tag from '../Tag/Tag';
+
 import classNames from 'classnames';
 
 const SlideDown = (props) => {
-	const { head, onShow, isShow, sortBy, onSort, btn, children } = props;
-	const onSubmitSelect = (fn, params) => {
-		fn(params);
-		onShow();
-	};
+	const { head, onShow, isShow, sortBy, children } = props;
+
+	// const onSubmitSelect = (fn, params) => {
+	// 	fn(params);
+	// 	onShow();
+	// };
 
 	return (
 		<>

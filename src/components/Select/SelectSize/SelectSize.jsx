@@ -28,7 +28,8 @@ const SelectSize = props => {
 }
 
 SelectSize.propTypes = {
-
+	btn: PropTypes.string,
+	options: PropTypes.array
 }
 
 export default SelectSize

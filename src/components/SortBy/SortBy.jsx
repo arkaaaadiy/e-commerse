@@ -1,9 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import classNames from 'classnames';
 import './SortBy.sass'
 const SortBy = props => {
-    const { onShow, options, onSort} = props
+	const { onShow, options, onSort} = props
+	
     const onSubmitSelect = (fn, params) => {
 		fn(params);
 		onShow();

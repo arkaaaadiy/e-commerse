@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Heading from '../../../components/Heading/Heading';
 import Filters from '../../../components/Filters/Filters';
 import Tag from '../../../components/Tag/Tag';
@@ -10,8 +10,10 @@ import ProductItem from '../../../components/ProductItem/ProductItem';
 import { useState } from 'react';
 import SlideDown from '../../../components/SlideDown/SlideDown';
 import SelectSize from '../../../components/Select/SelectSize/SelectSize';
+import { useParams } from 'react-router-dom';
 
 const Catalog = (props) => {
+	let params = useParams()
 	const data = [
 		{
 			photo,
@@ -98,7 +100,7 @@ const Catalog = (props) => {
 	return (
 		<div>
 			<Heading className='container' search>
-				Women's tops
+				{`${params.sex}'s ${params.subcategory}`}
 			</Heading>
 			<div className='catalog__filter'>
 				<div className='tags'>

@@ -20,6 +20,10 @@ function areEqual(prevProps, nextProps) {
 	return prevProps.check === nextProps.check ? true : false
   }
 
-BrandItem.propTypes = {};
+BrandItem.propTypes = {
+	name: PropTypes.string,
+	check: PropTypes.bool,
+	id: PropTypes.number,
+};
 
 export default React.memo(BrandItem, areEqual);

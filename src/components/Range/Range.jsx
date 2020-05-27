@@ -41,6 +41,10 @@ const Range = props => {
 	);
 };
 
-Range.propTypes = {};
+Range.propTypes = {
+	min: PropTypes.number,
+	max: PropTypes.number,
+	className: PropTypes.string,
+};
 
 export default Range;

@@ -17,6 +17,8 @@ const Info = props => {
 	);
 };
 
-Info.propTypes = {};
+Info.propTypes = {
+	children: PropTypes.string
+};
 
 export default Info;

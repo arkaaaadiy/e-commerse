@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import photo from '../../assets/product1.png';
 import photo1 from '../../assets/product2.png';
 import photo2 from '../../assets/alsodress.png';

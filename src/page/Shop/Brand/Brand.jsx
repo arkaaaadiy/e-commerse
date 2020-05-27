@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import Heading from '../../../components/Heading/Heading';
 import SearchBar from '../../../components/SearchBar/SearchBar';
 import { useState } from 'react';
