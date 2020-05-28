@@ -75,7 +75,7 @@ function App() {
       <Switch>
       <Route path='/filter' component={FiltersPage} />
       
-      <Route path='/shop/:sex/:subcategory'><Catalog /></Route>
+      <Route path='/shop/:sex/:category/:subcategory'><Catalog /></Route>
       <Route path='/shop' component={Categories} />
       <Route path='/catalog' component={Catalog} />
       <Route path='/order-details' ><OrderDetails data={data} /></Route>

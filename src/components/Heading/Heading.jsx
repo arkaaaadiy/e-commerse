@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Headling.sass';
+import { useHistory } from 'react-router-dom';
 
 const Heading = props => {
+	let history = useHistory()
+	const onGoBack = () => {
+		history.goBack()
+	}
+
 	const { children, search, title, className, onClick, noback} = props;
 	return (<div className={className}>
 		<header>
-			{!noback && <nav onClick={onClick}>
+			{noback ? <div className='noback' /> : <nav onClick={onClick ? onClick : onGoBack}>
 				<svg width='10' height='16' viewBox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
 					<path
 						fillRule='evenodd'

@@ -67,7 +67,7 @@ const Main = (props) => {
 			{/* {main3()} */}
 			<div className='container'>
 				{data.map((el) => (
-					<MainBlock title={el.title} subtitle={el.subtitle} data={el.product} />
+					<MainBlock key={el.title} title={el.title} subtitle={el.subtitle} data={el.product} />
 				))}
 				{/* <MainBlock title='New' subtitle='You’ve never seen it before!' data={data} />
 			<MainBlock title='Sale' subtitle='Super summer sale' data={data} /> */}

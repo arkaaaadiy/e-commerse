@@ -18,12 +18,20 @@ const Categories = (props) => {
 		history.push(`/shop/${name.toLowerCase()}`);
 	};
 	const onChangeCategory = (event) => {
+		
 		setCaterory(event.currentTarget.dataset.id.toLowerCase())
-		// history.push(`/shop/${currentTab.toLowerCase()}/${event.currentTarget.dataset.id.toLowerCase()}`);
+		history.push(`/shop/${currentTab.toLowerCase()}/${event.currentTarget.dataset.id.toLowerCase()}`);
 	};
+	const goBackCategory = () => {
 
+		setCaterory(null)
+		history.push('/shop')
+	}
 	const var1 = (
 		<>
+			<Heading noback className='container' search>
+				Categories
+			</Heading>
 			<Tabs tabs={tabs} onClick={onChangeHendler} currentTab={currentTab} />
 			<section className='container'>
 				<div className='categoryCards'>
@@ -51,6 +59,9 @@ const Categories = (props) => {
 
 	const var2 = (
 		<>
+			<Heading onClick={goBackCategory} className='container' search>
+				Categories
+			</Heading>
 			<section className='container'>
 				<div className='category__btn'>
 					<Button>VIEW ALL ITEMS</Button>
@@ -62,7 +73,7 @@ const Categories = (props) => {
 						tab.name === currentTab
 							? tab.cards.map((card) =>
 									card.category && card.category.map((el) => (
-										<Link to={`/shop/${currentTab}/${el.name}`} key={el.name}>
+										<Link to={location => `${location.pathname}/${el.name}`} key={el.name}>
 											<div className='category__item'>
 												<div className='category__label text'>{el.name}</div>
 												<div className='category__line'></div>
@@ -79,9 +90,7 @@ const Categories = (props) => {
 
 	return (
 		<div>
-			<Heading className='container' search>
-				Categories
-			</Heading>
+			
 			{caterory ? var2 : var1}
 		</div>
 	);
