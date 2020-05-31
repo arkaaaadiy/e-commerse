@@ -9,7 +9,41 @@ const initialState = {
             name: 'Women',
             cards: [{
                     name: 'New',
-                    image: img1
+                    image: img1,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Clothes',
@@ -51,11 +85,79 @@ const initialState = {
                 },
                 {
                     name: 'Shoes',
-                    image: img3
+                    image: img3,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Accesories',
-                    image: img4
+                    image: img4,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
             ]
         },
@@ -64,19 +166,155 @@ const initialState = {
             name: 'Men',
             cards: [{
                     name: 'New',
-                    image: img4
+                    image: img4,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Clothes',
-                    image: img3
+                    image: img3,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Shoes',
-                    image: img2
+                    image: img2,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Accesories',
-                    image: img1
+                    image: img1,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
             ]
         },
@@ -85,19 +323,155 @@ const initialState = {
             name: 'Kids',
             cards: [{
                     name: 'New',
-                    image: img2
+                    image: img2,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Clothes',
-                    image: img3
+                    image: img3,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Shoes',
-                    image: img1
+                    image: img1,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
                 {
                     name: 'Accesories',
-                    image: img4
+                    image: img4,
+                    category: [{
+                        name: 'Tops'
+                    },
+                    {
+                        name: 'Shirts & Blouses'
+                    },
+                    {
+                        name: 'Cardigans & Sweaters'
+                    },
+                    {
+                        name: 'Knitwear'
+                    },
+                    {
+                        name: 'Blazers'
+                    },
+                    {
+                        name: 'Outerwear'
+                    },
+                    {
+                        name: 'Pants'
+                    },
+                    {
+                        name: 'Jeans'
+                    },
+                    {
+                        name: 'Shorts'
+                    },
+                    {
+                        name: 'Skirts'
+                    },
+                    {
+                        name: 'Dresses'
+                    },
+                ]
                 },
             ]
         },

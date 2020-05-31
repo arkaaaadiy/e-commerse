@@ -8,7 +8,7 @@ import { useHistory, Link } from 'react-router-dom';
 import Button from '../../../components/Button/Button';
 
 const Categories = (props) => {
-	const [caterory, setCaterory] = useState(null);
+	const [category, setCategory] = useState(null);
 	let history = useHistory();
 	const { tabs } = props;
 	const [currentTab, setCurrentTab] = useState('Women');
@@ -19,12 +19,12 @@ const Categories = (props) => {
 	};
 	const onChangeCategory = (event) => {
 		
-		setCaterory(event.currentTarget.dataset.id.toLowerCase())
+		setCategory(event.currentTarget.dataset.id)
 		history.push(`/shop/${currentTab.toLowerCase()}/${event.currentTarget.dataset.id.toLowerCase()}`);
 	};
 	const goBackCategory = () => {
 
-		setCaterory(null)
+		setCategory(null)
 		history.push('/shop')
 	}
 	const var1 = (
@@ -71,8 +71,8 @@ const Categories = (props) => {
 				<div className='category__items'>
 					{tabs.map((tab) =>
 						tab.name === currentTab
-							? tab.cards.map((card) =>
-									card.category && card.category.map((el) => (
+							? tab.cards.map((card) => 
+									card.name === category && card.category.map((el) => (
 										<Link to={location => `${location.pathname}/${el.name}`} key={el.name}>
 											<div className='category__item'>
 												<div className='category__label text'>{el.name}</div>
@@ -87,11 +87,11 @@ const Categories = (props) => {
 			</section>
 		</>
 	);
-
+	
 	return (
 		<div>
 			
-			{caterory ? var2 : var1}
+			{category ? var2 : var1}
 		</div>
 	);
 };

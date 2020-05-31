@@ -7,7 +7,7 @@ import './Filters.sass';
 import SlideDown from '../SlideDown/SlideDown';
 import SortBy from '../SortBy/SortBy';
 
-const Filters = ({ className, listShow, setListShow }) => {
+const Filters = ({ className, listShow, setListShow, onShowFiltersPage }) => {
 	const [optionsSort, setOptionsSort] = useState([
 		{ name: 'Popular' },
 		{ name: 'Newest' },
@@ -28,7 +28,7 @@ const Filters = ({ className, listShow, setListShow }) => {
 	return (
 		<div className={className}>
 			<div className='filters helperText'>
-				<div className='filters__item'>
+				<div className='filters__item' onClick={onShowFiltersPage}>
 					<img src={filter} alt='filter icon' className='filters__icon' />
 					<span>Filters</span>
 				</div>

@@ -31,7 +31,11 @@ const SlideDown = (props) => {
 };
 
 SlideDown.propTypes = {
-	btn: PropTypes.string.isRequired,
+	head: PropTypes.string,
+	onShow: PropTypes.func,
+	isShow: PropTypes.bool,
+	sortBy: PropTypes.bool,
+	children: PropTypes.any,
 };
 
 export default SlideDown;

@@ -8,7 +8,8 @@ import Button from '../../../components/Button/Button';
 import { useState } from 'react';
 import Brand from '../Brand/Brand';
 
-const FiltersPage = () => {
+const FiltersPage = (props) => {
+	const {onShowFiltersPage} = props
 	const colors = [
 		{ color: '#020202' },
 		{ color: '#F6F6F6' },
@@ -34,20 +35,26 @@ const FiltersPage = () => {
 		{name: 'Girls', check: false},
 	]
 	const [brandShow, setBrandShow] = useState(false);
+	// const [filters, setFilters] = useState([])
+
+
+	const onShowBrand = () => {
+		setBrandShow(!brandShow)
+	}
 
 	return (
 		<div>
 			{brandShow ? (
-				<Brand onClick={() => setBrandShow(false)} />
+				<Brand onClick={onShowBrand} />
 			) : (
 				<>
-					<Heading className='container'>Filters</Heading>
+					<Heading onClick={onShowFiltersPage} className='container'>Filters</Heading>
 
 					<div className='filtersProduct'>
 						<div className='filtersProduct__item '>
 							<h4 className='filtersProduct__label container subheads'>Price range</h4>
 							<div className='filtersProduct__body'>
-								<Range className='filtersProduct__inner' min='0' max='100' />
+								<Range className='filtersProduct__inner' min='0' max='3000' />
 							</div>
 						</div>
 						<div className='filtersProduct__item container'>
@@ -78,7 +85,7 @@ const FiltersPage = () => {
 							</div>
 						</div>
 
-						<div className='filtersProduct__item container' onClick={() => setBrandShow(true)}>
+						<div className='filtersProduct__item container' onClick={onShowBrand}>
 							<h4 className='filtersProduct__label subheads'>Brand</h4>
 							<p className='helperText filtersProduct__sublabel'>adidas Originals, Jack & Jones, s.Oliver</p>
 							<div className='filtersProduct__arrow'>

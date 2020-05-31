@@ -31,8 +31,8 @@ const Rating = props => {
 }
 
 Rating.propTypes = {
-    stars: PropTypes.string,
-    voises: PropTypes.string
+    stars: PropTypes.number,
+    voises: PropTypes.number
 }
 
 export default Rating
