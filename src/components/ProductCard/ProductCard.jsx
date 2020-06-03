@@ -6,14 +6,14 @@ import ProductCatalog from '../ProductCatalog/ProductCatalog'
 import ProductOrderInfo from './ProductOrderInfo/ProductOrderInfo'
 
 const ProductCard = props => {
-    const {variant = 'bag', dataProduct} = props
+    const {variant = 'bag', dataProduct, ...rest} = props
     return (
         <div className='product-card'>
             <div className="product-card__img"> 
                 <img src={dataProduct.photo} alt="main img card"/>
             </div>
             <div className="product-card__body">
-               {variant === 'bag' && <ProductBag dataProduct={dataProduct} /> } 
+               {variant === 'bag' && <ProductBag {...rest} dataProduct={dataProduct} /> } 
                {variant === 'category' && <ProductCatalog  dataProduct={dataProduct} /> } 
                {variant === 'order' && <ProductOrderInfo dataProduct={dataProduct} /> } 
             </div>
@@ -26,4 +26,4 @@ ProductCard.propTypes = {
     dataProduct: PropTypes.object
 }
 
-export default ProductCard
+export default React.memo(ProductCard)

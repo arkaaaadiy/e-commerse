@@ -2,21 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductBag.sass';
 import ButtonAdd from '../../ButtonAdd/ButtonAdd';
-import { useState } from 'react';
 
 const ProductBag = props => {
-	const { dataProduct } = props;
-	const { name, color, size, price } = dataProduct;
-	const [quantity, setQantity] = useState(1);
+	const { dataProduct, subCount, addCount } = props;
+	const { name, color, size, price, count, id } = dataProduct;	
 
-	const chengeQuantity = operation => {
-		if (operation === '+') {
-			setQantity(quantity + 1);
-		} else {
-			if (quantity > 1) {
-				setQantity(quantity - 1);
-			}
-		}
+	const chengeCount = (e) => {
+		const btn = e.currentTarget
+		btn.classList.contains('add') ? addCount(id) : count > 1 && subCount(id)		
 	};
 
 	return (
@@ -33,11 +26,11 @@ const ProductBag = props => {
 				</div>
 				<div className='card__quantityPrice'>
 					<div className='card__quantity'>
-						<ButtonAdd sub onClick={() => chengeQuantity('-')} />
-						<span className='card__quantityNumber'>{quantity}</span>
-						<ButtonAdd onClick={() => chengeQuantity('+')} />
+						<ButtonAdd sub onClick={chengeCount} />
+						<span className='card__quantityNumber'>{count}</span>
+						<ButtonAdd onClick={chengeCount} />
 					</div>
-					<div className='card__price'>{price}$</div>
+					<div className='card__price'>{price*count}$</div>
 				</div>
 			</div>
 		</div>
