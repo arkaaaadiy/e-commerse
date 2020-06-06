@@ -1,12 +1,12 @@
 import React from 'react';
-import Heading from '../../../components/Heading/Heading';
+import Heading from '../../components/Heading/Heading';
 import './FiltersPage.sass';
-import Range from '../../../components/Range/Range';
-import Colors from '../../../components/Colors/Colors';
-import Tag from '../../../components/Tag/Tag';
-import Button from '../../../components/Button/Button';
+import Range from '../../components/Range/Range';
+import Colors from '../../components/Colors/Colors';
+import Tag from '../../components/Tag/Tag';
+import Button from '../../components/Button/Button';
 import { useState } from 'react';
-import Brand from '../Brand/Brand';
+import Brand from '../Shop/Brand/Brand';
 
 const FiltersPage = (props) => {
 	const {onShowFiltersPage} = props

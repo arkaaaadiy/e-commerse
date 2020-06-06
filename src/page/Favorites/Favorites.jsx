@@ -1,24 +1,19 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import Heading from '../../../components/Heading/Heading';
-import Filters from '../../../components/Filters/Filters';
-import Tag from '../../../components/Tag/Tag';
-import './Catalog.sass';
-// import photo from '../../../assets/image.jpg';
-import ProductList from '../../../components/ProductList/ProductList';
-import ProductItem from '../../../components/ProductItem/ProductItem';
 import { useState } from 'react';
-import SlideDown from '../../../components/SlideDown/SlideDown';
-import SelectSize from '../../../components/Select/SelectSize/SelectSize';
-import { useParams } from 'react-router-dom';
-import { ucFirst } from '../../../utils/utils';
-import FiltersPage from '../../FiltersPage/FiltersPage';
 import { connect } from 'react-redux';
+
+import Heading from '../../components/Heading/Heading';
+import Filters from '../../components/Filters/Filters';
+import Tag from '../../components/Tag/Tag';
+import ProductList from '../../components/ProductList/ProductList';
+import ProductItem from '../../components/ProductItem/ProductItem';
+import SlideDown from '../../components/SlideDown/SlideDown';
+import SelectSize from '../../components/Select/SelectSize/SelectSize';
+import FiltersPage from '../FiltersPage/FiltersPage';
 import classNames from 'classnames';
 
-const Catalog = (props) => {
+const Favorites = (props) => {
 	const { data } = props;
-	let params = useParams();
 	const options = [{ name: 'XS' }, { name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }];
 	const [listShow, setListShow] = useState(false);
 	const [select, setSelect] = useState(false);
@@ -38,8 +33,8 @@ const Catalog = (props) => {
 				<FiltersPage onShowFiltersPage={onShowFiltersPage} />
 			) : (
 				<>
-					<Heading className='container' search>
-						{`${ucFirst(params.sex)}'s ${params.subcategory.toLowerCase()}`}
+					<Heading noback className='container' search>
+						Favorites
 					</Heading>
 					<div className='catalog__filter'>
 						<div className='tags'>
@@ -84,11 +79,11 @@ const Catalog = (props) => {
 								<ProductList
 									key={card.name + card.price}
 									className='catalog__productItem'
-									catalog
+									
 									dataProduct={card}
 								/>
 							) : (
-								<ProductItem key={card.name + card.price} dataProduct={card} catalog onClick={onShowSelect} />
+								<ProductItem key={card.name + card.price} dataProduct={card}  onClick={onShowSelect} />
 							)
 						)}
 					</div>
@@ -102,7 +97,6 @@ const Catalog = (props) => {
 	);
 };
 
-Catalog.propTypes = {};
 
 const mapStateToProps = (state) => ({
 	data: state.product.data,
@@ -112,4 +106,4 @@ const mapStateToProps = (state) => ({
 
 // }
 
-export default connect(mapStateToProps)(Catalog);
+export default connect(mapStateToProps)(Favorites);

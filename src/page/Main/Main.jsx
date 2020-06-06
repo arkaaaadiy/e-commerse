@@ -3,7 +3,6 @@ import MainBlock from '../../components/MainBlock/MainBlock';
 import './Main.sass';
 import Button from '../../components/Button/Button';
 import bg from '../../assets/mainbig.png';
-// import smallbg from '../../assets/small-bg.png';
 // import image1 from '../../assets/image1.png';
 // import image2 from '../../assets/image2.png';
 // import image3 from '../../assets/image3.png';

@@ -6,7 +6,7 @@ import Login from './containers/Auth/Login/Login'
 import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
 import Topbar from './components/Topbar/Topbar';
 import OrderDetails from './page/Profile/OrderDetails/OrderDetails';
-import FiltersPage from './page/Shop/FiltersPage/FiltersPage';
+import FiltersPage from './page/FiltersPage/FiltersPage';
 import Main from './page/Main/Main';
 import Categories from './page/Shop/Categories/Categories';
 import Catalog from './page/Shop/Catalog/Catalog';
@@ -15,6 +15,7 @@ import Bag from './page/Bag/Bag';
 import photo from './assets/image.jpg';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import AuthLayout from './hoc/AuthLayout';
+import Favorites from './page/Favorites/Favorites';
 
 function App() {
   const isAuthenticated = true
@@ -82,6 +83,7 @@ function App() {
       <Route path='/profile' component={Profile} />
       <Route path='/product' component={Product} />
       <Route path='/bag' component={Bag} />
+      <Route path='/favorites' component={Favorites} />
       <Route path='/' component={Main} />
       <Redirect to='/'/>
       </Switch> 
