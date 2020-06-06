@@ -18,7 +18,7 @@ const ProductItem = (props) => {
 			</div>
 			<div className='product-item__saleAtribut'>
 				{newItem && <Labels>NEW</Labels>}
-				{discont && <Labels discont={true}>-{discont}%</Labels>}
+				{discont > 0 && <Labels discont={true}>-{discont}%</Labels>}
 			</div>
 			<div className='product-item__body'>
 				<div className='product-item__rating-big pb5'>

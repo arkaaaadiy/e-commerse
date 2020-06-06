@@ -1,28 +1,34 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import Heading from '../../../components/Heading/Heading';
 import Filters from '../../../components/Filters/Filters';
 import Tag from '../../../components/Tag/Tag';
-import './Catalog.sass';
-// import photo from '../../../assets/image.jpg';
 import ProductList from '../../../components/ProductList/ProductList';
 import ProductItem from '../../../components/ProductItem/ProductItem';
-import { useState } from 'react';
+import FiltersPage from '../../FiltersPage/FiltersPage';
 import SlideDown from '../../../components/SlideDown/SlideDown';
 import SelectSize from '../../../components/Select/SelectSize/SelectSize';
-import { useParams } from 'react-router-dom';
+
+import './Catalog.sass';
 import { ucFirst } from '../../../utils/utils';
-import FiltersPage from '../../FiltersPage/FiltersPage';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
 
+import {getProducts} from '../../../store/actions/Product';
+
 const Catalog = (props) => {
-	const { data } = props;
+	const { data, getProducts } = props;
 	let params = useParams();
 	const options = [{ name: 'XS' }, { name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }];
 	const [listShow, setListShow] = useState(false);
 	const [select, setSelect] = useState(false);
 	const [filterShow, setFilterShow] = useState(false);
+
+	useEffect(() => {
+		getProducts()
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	const onShowFiltersPage = () => {
 		setFilterShow(!filterShow);
@@ -112,4 +118,4 @@ const mapStateToProps = (state) => ({
 
 // }
 
-export default connect(mapStateToProps)(Catalog);
+export default connect(mapStateToProps, {getProducts})(Catalog);

@@ -19,7 +19,7 @@ const ProductList = (props) => {
 				</div>
 				<div className='product-list__saleAtribut'>
 					{newItem && <Labels>NEW</Labels>}
-					{discont && <Labels discont={true}>-{discont}%</Labels>}
+					{discont > 0 && <Labels discont={true}>-{discont}%</Labels>}
 				</div>
 				<div className='product-list__body'>
 					<div className='product-list__wrapper'>

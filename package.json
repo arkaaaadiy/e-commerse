@@ -22,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "run-mock-server": "node ./src/utils/dev/run-mock-server.js",
+    "gen-mock-data": "node ./src/utils/dev/generate-mock-data.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.16.1"
   }
 }
