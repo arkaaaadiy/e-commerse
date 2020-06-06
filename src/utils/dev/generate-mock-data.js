@@ -23,7 +23,7 @@ const generateProductItem = () => {
         brand: 'Mango',
         category: faker.fake('{{commerce.product}}'),
         subcategory: 'tops',
-        photo: faker.fake('{{image.image}}'),
+        photo: faker.image.imageUrl(648,736),
         size: ['XS', 'S', 'M', 'L', 'XL'],
         color: faker.fake('{{commerce.color}}'),
         price: faker.fake('{{commerce.price}}'),

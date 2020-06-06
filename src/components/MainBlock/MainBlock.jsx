@@ -14,7 +14,7 @@ const MainBlock = props => {
                 {also ? <div className="block__items">{data.length} items</div>: <div className='block__viewAll helperText'>View all</div>}
             </div>
             <div className="block__productItems">
-                {data.map((e, index)=> <ProductItem key={index} catalog dataProduct={e} />)}                
+                {data.map((e, index)=> <ProductItem key={index} main catalog dataProduct={e} />)}                
             </div>
         </div>
     )

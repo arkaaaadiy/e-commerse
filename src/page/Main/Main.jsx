@@ -61,15 +61,11 @@ const Main = (props) => {
 
 	return (
 		<div>
-			{main1()}
-			{/* {main2()} */}
-			{/* {main3()} */}
+			{main1()}			
 			<div className='container'>
 				{data.map((el) => (
 					<MainBlock key={el.title} title={el.title} subtitle={el.subtitle} data={el.product} />
-				))}
-				{/* <MainBlock title='New' subtitle='You’ve never seen it before!' data={data} />
-			<MainBlock title='Sale' subtitle='Super summer sale' data={data} /> */}
+				))}				
 			</div>
 		</div>
 	);

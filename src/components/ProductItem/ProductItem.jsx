@@ -5,9 +5,10 @@ import Rating from '../Rating/Rating';
 import ButtonAddToBag from '../ButtonAddToBag/ButtonAddToBag';
 import Labels from '../Label/Label';
 import ButtonLike from '../ButtonLike/ButtonLike';
+import classnames from 'classnames';
 
 const ProductItem = (props) => {
-	const { dataProduct, catalog, onClick } = props;
+	const { dataProduct, main, catalog, onClick } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 	return (
 		<div className='product-item'>
@@ -66,7 +67,7 @@ const ProductItem = (props) => {
 						<ButtonAddToBag />
 					</div>
 				)}
-                {catalog && <div onClick={onClick} className='product-item__btnbag product-item__btnbag-catalog'>
+                {catalog && <div onClick={onClick} className={classnames('product-item__btnbag product-item__btnbag-catalog', {'product-item__btnbag-main': main})} >
 						<ButtonLike />
 					</div>}
 			</div>
