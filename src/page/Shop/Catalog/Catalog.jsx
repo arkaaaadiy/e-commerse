@@ -26,7 +26,7 @@ const Catalog = (props) => {
 	const [filterShow, setFilterShow] = useState(false);
 
 	useEffect(() => {
-		getProducts()
+		if(data.length === 0){getProducts()} 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
@@ -108,14 +108,10 @@ const Catalog = (props) => {
 	);
 };
 
-Catalog.propTypes = {};
 
 const mapStateToProps = (state) => ({
 	data: state.product.data,
 });
 
-// const mapDispatchToProps = {
-
-// }
 
 export default connect(mapStateToProps, {getProducts})(Catalog);

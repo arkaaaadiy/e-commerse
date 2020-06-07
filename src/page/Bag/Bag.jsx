@@ -29,7 +29,9 @@ const Bag = (props) => {
 		));
 	};
 
-	const showPromocode = () => {
+	const showPromocode = (e) => {
+		e.preventDefault()
+		e.stopPropagation()
 		setShowPromoCode(!showPromoCode)
 	};
 
@@ -46,10 +48,9 @@ const Bag = (props) => {
 					<InputText
 						size='small'
 						id='promocode1'
-						label='Enter your promo code'
-						onClick={''}
-						value={promocode}
-						onChange={setPromocode}
+						label='Enter your promo code'						
+						value={promocode}	
+						disabled					
 					/>
 				</div>
 				<SlideDown isShow={showPromoCode} onShow={showPromocode }>
@@ -58,7 +59,7 @@ const Bag = (props) => {
 							size='small'
 							id='promocode'
 							label='Enter your promo code'
-							onClick={(e) => console.log(e.target)}
+							onClick={(e) => console.log(e.currentTarget)}
 							value={promocode}
 							onChange={setPromocode}
 						/>

@@ -17,6 +17,7 @@ const Input = (props) => {
 		label = 'label',
 		type = 'text',
 		className,
+		disabled,
 	} = props;
 
 	const [_value, setValueInput] = useState(value);
@@ -25,11 +26,7 @@ const Input = (props) => {
 		setValueInput(e.target.value);
 		onChange(e.target.value);
 	};
-
-	const clearValue = () => {
-		setValueInput('');
-		onChange('');
-	};
+	
 
 	const small = size === 'small' ? true : false;
 	const NextButton = (onClick) => (
@@ -53,70 +50,7 @@ const Input = (props) => {
 			</svg>
 		</>
 	);
-	if (false) {
-		return (
-			<div className={className}>
-				<div className='TextField'>
-					<div className='inputText'>
-						<input
-							type={type}
-							id={id}
-							onChange={onChangeHendler}
-							value={_value}
-							onBlur={onBlur}
-							name={name}
-							className={classNames('input input-small', { 'input-error': error }, { 'input-button': onClick })}
-						/>
-						<label
-							htmlFor={id}
-							className={classNames('input__label input__label-small', {
-								'input__label-small-active': _value ? true : false,
-							})}
-						>
-							{label}
-						</label>
-						{_value && (
-							<svg
-								onClick={clearValue}
-								className='input__icon input__icon-small'
-								width='24'
-								height='24'
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									fillRule='evenodd'
-									clipRule='evenodd'
-									d='M18 7.2L16.8 6L12 10.8L7.2 6L6 7.2L10.8 12L6 16.8L7.2 18L12 13.2L16.8 18L18 16.8L13.2 12L18 7.2Z'
-									fill='#ABB4BD'
-								/>
-							</svg>
-						)}
-						{error && (
-							<svg
-								className='input__icon input__icon-small'
-								width='24'
-								height='24'
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									fillRule='evenodd'
-									clipRule='evenodd'
-									d='M18 7.2L16.8 6L12 10.8L7.2 6L6 7.2L10.8 12L6 16.8L7.2 18L12 13.2L16.8 18L18 16.8L13.2 12L18 7.2Z'
-									fill='#FF2424'
-								/>
-							</svg>
-						)}
-						
-					</div>
-					{error && <span className='input__error helperText'>{error}</span>}
-				</div>
-			</div>
-		);
-	}
+	
 
 	const OkIcon = ({className}) => {
 		return <div className={className}>
@@ -184,6 +118,7 @@ const Input = (props) => {
 						value={_value}
 						onBlur={onBlur}
 						name={name}
+						disabled={disabled}
 						className={classNames(
 							'input', 
 							{ 'input-error': error }, 
