@@ -16,11 +16,13 @@ import { ucFirst } from '../../../utils/utils';
 import classNames from 'classnames';
 
 import {getProducts} from '../../../store/actions/Product';
+import {addItemToFavorites} from '../../../store/actions/Favorites';
 
 const Catalog = (props) => {
-	const { data, getProducts } = props;
-	let params = useParams();
-	const options = [{ name: 'XS' }, { name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }];
+	const { data, getProducts, addItemToFavorites } = props;
+	let params = useParams();	
+	const [options, setOptions] = useState([]);
+	const [currentItem, setCurrentItem] = useState(null)
 	const [listShow, setListShow] = useState(false);
 	const [select, setSelect] = useState(false);
 	const [filterShow, setFilterShow] = useState(false);
@@ -34,9 +36,25 @@ const Catalog = (props) => {
 		setFilterShow(!filterShow);
 	};
 
-	const onShowSelect = () => {
+	const onShowSelect = (data) => {	
+		if (!data.target)  {
+			setOptions([...data.size])
+			setCurrentItem(data)
+		}			
 		setSelect(!select);
 	};
+
+	const addItemInFavorites = (size) => {
+		const resutl = {
+			...currentItem,
+			size
+		}
+		addItemToFavorites(resutl)
+	}
+
+	const name = (params) => {
+		
+	}
 
 	return (
 		<div>
@@ -49,23 +67,23 @@ const Catalog = (props) => {
 					</Heading>
 					<div className='catalog__filter'>
 						<div className='tags'>
-							<div className='tags__item'>
-								<Tag checked={true} small>
+							<div className='tags__item'>								
+								<Tag checked={false} onChange={name} small>
 									T-shirt
 								</Tag>
 							</div>
 							<div className='tags__item'>
-								<Tag checked={true} small>
+								<Tag checked={false} onChange={name} small>
 									Crop tops
 								</Tag>
 							</div>
 							<div className='tags__item'>
-								<Tag checked={true} small>
+								<Tag checked={false} onChange={name} small>
 									Blouses
 								</Tag>
 							</div>
 							<div className='tags__item'>
-								<Tag checked={true} small>
+								<Tag checked={false} onChange={name} small>
 									Shirts
 								</Tag>
 							</div>
@@ -100,7 +118,7 @@ const Catalog = (props) => {
 					</div>
 
 					<SlideDown isShow={select} onShow={onShowSelect}>
-						<SelectSize options={options} btn='add to card' />
+						<SelectSize options={options} onShowSelect={onShowSelect} addItemInFavorites={addItemInFavorites} btn='add to favorite'  />
 					</SlideDown>
 				</>
 			)}
@@ -114,4 +132,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, {getProducts})(Catalog);
+export default connect(mapStateToProps, {getProducts, addItemToFavorites})(Catalog);

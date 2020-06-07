@@ -37,7 +37,7 @@ const Favorites = (props) => {
 						Favorites
 					</Heading>
 					<div className='catalog__filter'>
-						<div className='tags'>
+						{/* <div className='tags'>
 							<div className='tags__item'>
 								<Tag checked={true} small>
 									T-shirt
@@ -58,7 +58,7 @@ const Favorites = (props) => {
 									Shirts
 								</Tag>
 							</div>
-						</div>
+						</div> */}
 						<Filters
 							onShowFiltersPage={onShowFiltersPage}
 							setListShow={setListShow}
@@ -74,32 +74,30 @@ const Favorites = (props) => {
 							{ 'catalog__products-list': listShow }
 						)}
 					>
-						{data.map((card) =>
-							listShow ? (
-								<ProductList
-									key={card.name + card.price}
-									className='catalog__productItem'
-									
-									dataProduct={card}
-								/>
-							) : (
-								<ProductItem key={card.name + card.price} dataProduct={card}  onClick={onShowSelect} />
+						{data.length > 0 ? (
+							data.map((card) =>
+								listShow ? (
+									<ProductList key={card.id} className='catalog__productItem' dataProduct={card} />
+								) : (
+									<ProductItem key={card.id} dataProduct={card} onClick={onShowSelect} />
+								)
 							)
+						) : (
+							<h1>Favorite empty</h1>
 						)}
 					</div>
 
-					<SlideDown isShow={select} onShow={onShowSelect}>
+					{/* <SlideDown isShow={select} onShow={onShowSelect}>
 						<SelectSize options={options} btn='add to card' />
-					</SlideDown>
+					</SlideDown> */}
 				</>
 			)}
 		</div>
 	);
 };
 
-
 const mapStateToProps = (state) => ({
-	data: state.product.data,
+	data: state.Favorites.data,
 });
 
 // const mapDispatchToProps = {

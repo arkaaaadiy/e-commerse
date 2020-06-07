@@ -4,12 +4,13 @@ import './Tag.sass';
 import classNames from 'classnames';
 
 const Tag = (props) => {
-	const { children, id, small, checked, size } = props;
+	const { children, id, small, checked, size, onChange } = props;
 	return (
 		<div>
 			<input
 				id={id}
-                defaultChecked={checked}
+				checked={checked}
+				onChange={onChange}
 				className={classNames('tag', { 'tag-small': small }, { 'tag-size': size })}
 				type='checkbox'
 			/>

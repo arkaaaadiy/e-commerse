@@ -10,6 +10,11 @@ import classnames from 'classnames';
 const ProductItem = (props) => {
 	const { dataProduct, main, catalog, onClick } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
+
+	const onClickInner = () => {
+		onClick(dataProduct)
+	}
+
 	return (
 		<div className='product-item'>
 			{soldOut && <div className='disablecard'></div>}
@@ -67,7 +72,7 @@ const ProductItem = (props) => {
 						<ButtonAddToBag />
 					</div>
 				)}
-                {catalog && <div onClick={onClick} className={classnames('product-item__btnbag product-item__btnbag-catalog', {'product-item__btnbag-main': main})} >
+                {catalog && <div onClick={onClickInner} className={classnames('product-item__btnbag product-item__btnbag-catalog', {'product-item__btnbag-main': main})} >
 						<ButtonLike />
 					</div>}
 			</div>

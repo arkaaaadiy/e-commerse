@@ -4,6 +4,7 @@ import { mainReducer } from './mainReducer'
 import { categoriesReducer } from "./categoriesReducer";
 import { productReducer } from "./productReducer";
 import { bagReducer } from "./bagReducer";
+import { favoritesReducer } from "./favoritesReducer";
 
 export default combineReducers({
     app: appReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
     categories: categoriesReducer,
     product: productReducer,
     bag: bagReducer,
+    Favorites: favoritesReducer
 })

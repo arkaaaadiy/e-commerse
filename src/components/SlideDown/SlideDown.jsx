@@ -6,12 +6,6 @@ import classNames from 'classnames';
 
 const SlideDown = (props) => {
 	const { head, onShow, isShow, sortBy, children } = props;
-
-	// const onSubmitSelect = (fn, params) => {
-	// 	fn(params);
-	// 	onShow();
-	// };
-
 	return (
 		<>
 			{isShow && <div className='SlideDown' onClick={onShow}></div>}
