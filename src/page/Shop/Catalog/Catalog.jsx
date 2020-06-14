@@ -15,46 +15,46 @@ import './Catalog.sass';
 import { ucFirst } from '../../../utils/utils';
 import classNames from 'classnames';
 
-import {getProducts} from '../../../store/actions/Product';
-import {addItemToFavorites} from '../../../store/actions/Favorites';
+import { getProducts } from '../../../store/actions/Product';
+import { addItemToFavorites } from '../../../store/actions/Favorites';
 
 const Catalog = (props) => {
 	const { data, getProducts, addItemToFavorites } = props;
-	let params = useParams();	
+	let params = useParams();
 	const [options, setOptions] = useState([]);
-	const [currentItem, setCurrentItem] = useState(null)
+	const [currentItem, setCurrentItem] = useState(null);
 	const [listShow, setListShow] = useState(false);
 	const [select, setSelect] = useState(false);
 	const [filterShow, setFilterShow] = useState(false);
 
 	useEffect(() => {
-		if(data.length === 0){getProducts()} 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+		if (data.length === 0) {
+			getProducts();
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const onShowFiltersPage = () => {
 		setFilterShow(!filterShow);
 	};
 
-	const onShowSelect = (data) => {	
-		if (!data.target)  {
-			setOptions([...data.size])
-			setCurrentItem(data)
-		}			
+	const onShowSelect = (data) => {
+		if (!data.target) {
+			setOptions([...data.size]);
+			setCurrentItem(data);
+		}
 		setSelect(!select);
 	};
 
 	const addItemInFavorites = (size) => {
 		const resutl = {
 			...currentItem,
-			size
-		}
-		addItemToFavorites(resutl)
-	}
+			size,
+		};
+		addItemToFavorites(resutl);
+	};
 
-	const name = (params) => {
-		
-	}
+	const name = (params) => {};
 
 	return (
 		<div>
@@ -67,7 +67,7 @@ const Catalog = (props) => {
 					</Heading>
 					<div className='catalog__filter'>
 						<div className='tags'>
-							<div className='tags__item'>								
+							<div className='tags__item'>
 								<Tag checked={false} onChange={name} small>
 									T-shirt
 								</Tag>
@@ -110,15 +110,26 @@ const Catalog = (props) => {
 									className='catalog__productItem'
 									catalog
 									dataProduct={card}
+									onClick={onShowSelect}
 								/>
 							) : (
-								<ProductItem key={card.name + card.price} dataProduct={card} catalog onClick={onShowSelect} />
+								<ProductItem 
+									key={card.name + card.price} 
+									dataProduct={card} 
+									catalog 
+									onClick={onShowSelect} 
+								/>
 							)
 						)}
 					</div>
 
 					<SlideDown isShow={select} onShow={onShowSelect}>
-						<SelectSize options={options} onShowSelect={onShowSelect} addItemInFavorites={addItemInFavorites} btn='add to favorite'  />
+						<SelectSize
+							options={options}
+							onShowSelect={onShowSelect}
+							addItemInFavorites={addItemInFavorites}
+							btn='add to favorite'
+						/>
 					</SlideDown>
 				</>
 			)}
@@ -126,10 +137,8 @@ const Catalog = (props) => {
 	);
 };
 
-
 const mapStateToProps = (state) => ({
 	data: state.product.data,
 });
 
-
-export default connect(mapStateToProps, {getProducts, addItemToFavorites})(Catalog);
+export default connect(mapStateToProps, { getProducts, addItemToFavorites })(Catalog);

@@ -19,7 +19,7 @@ const ProductItem = (props) => {
 		<div className='product-item'>
 			{soldOut && <div className='disablecard'></div>}
 			{soldOut && <div className='soldout'>Sorry, this item currently sold out</div>}
-			<div className='product-item__img'>
+			<div className={classnames('product-item__img', {'product-item__img-main': main})}>
 				<img src={photo} alt='main img card' />
 			</div>
 			<div className='product-item__saleAtribut'>
@@ -44,7 +44,7 @@ const ProductItem = (props) => {
 				)}
 
 				<div className='product-item__priceRating'>
-					{discont ? (
+					{discont > 0 ? (
 						<div className='product-item__price descriptiveItems'>
 							<strike>{price}$</strike>
 							<span className='discontPrice'>{Math.round(price - (price * discont) / 100)}$</span>

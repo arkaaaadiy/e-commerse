@@ -9,6 +9,11 @@ import ButtonLike from '../ButtonLike/ButtonLike';
 const ProductList = (props) => {
 	const { dataProduct, className, catalog, onClick } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
+
+	const onClickInner = () => {
+		onClick(dataProduct)
+	}
+
 	return (
 		<div className={className}>
 			<div className='product-list'>
@@ -25,16 +30,16 @@ const ProductList = (props) => {
 					<div className='product-list__wrapper'>
 						<div className='product-list__brand'>{brand}</div>
 						<div className='product-list__name subheads'>{name}</div>
-						<div className='product-list__sizeColor'>
+						{!catalog && <div className='product-list__sizeColor'>
 							<div className='product-list__item'>
 								Color: <span className='colorWhite'>{color}</span>
 							</div>
 							<div className='product-list__item'>
 								Size: <span className='colorWhite'>{size}</span>
 							</div>
-						</div>
+						</div>}
 						<div className='product-list__priceRating'>
-							{discont ? (
+							{discont > 0 ? (
 								<div className='product-list__price descriptiveItems'>
 									<strike>{price}$</strike>
 									<span className='discontPrice'>{Math.round(price - (price * discont) / 100)}$</span>
@@ -65,7 +70,7 @@ const ProductList = (props) => {
 							</div>
 						)}
 						{catalog && (
-							<div onClick={onClick} className='product-list__btnbag product-list__btnbag-catalog'>
+							<div onClick={onClickInner} className='product-list__btnbag product-list__btnbag-catalog'>
 								<ButtonLike />
 							</div>
 						)}

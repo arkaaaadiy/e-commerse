@@ -5,6 +5,16 @@ const fs = require('fs')
 const path = require('path')
 const faker = require('faker')
 
+const arrImage = [
+  "https://i.ibb.co/dm9VB9Y/image2.png",
+"https://i.ibb.co/Bjdvg05/image3.png",
+"https://i.ibb.co/6wcq5RX/image4.png",
+"https://i.ibb.co/k4fN27J/image5.png",
+"https://i.ibb.co/2cr2VD6/photo1.png",
+"https://i.ibb.co/KG4PDKM/photo2.png",
+"https://i.ibb.co/tsJPry1/photo3.png",
+"https://i.ibb.co/Jc8bCDb/photo4.png",
+]
 
 const runNTimes = (count = 1) => funcToRun => {
   const result = []
@@ -23,7 +33,7 @@ const generateProductItem = () => {
         brand: 'Mango',
         category: faker.fake('{{commerce.product}}'),
         subcategory: 'tops',
-        photo: faker.image.imageUrl(648,736),
+        photo: faker.random.arrayElement(arrImage),
         size: ['XS', 'S', 'M', 'L', 'XL'],
         color: faker.fake('{{commerce.color}}'),
         price: faker.fake('{{commerce.price}}'),
@@ -31,7 +41,7 @@ const generateProductItem = () => {
         voises: getRandomNumber(15),
         newItem: faker.fake('{{random.boolean}}'),
         soldOut: false,
-        discont: faker.fake('{{random.arrayElement([0, 10, 15, 20, 30])}}'),    
+        discont: faker.fake('{{random.arrayElement([0, 20, 30])}}'),    
   }
 }
 
