@@ -10,9 +10,10 @@ import FiltersPage from '../FiltersPage/FiltersPage';
 import classNames from 'classnames';
 
 import { deleteItemInFavorites } from '../../store/actions/Favorites';
+import { addToBag } from '../../store/actions/Bag';
 
 const Favorites = (props) => {
-	const { data, deleteItemInFavorites } = props;
+	const { data, deleteItemInFavorites, addToBag } = props;
 	const [listShow, setListShow] = useState(false);
 	const [filterShow, setFilterShow] = useState(false);
 
@@ -57,9 +58,16 @@ const Favorites = (props) => {
 										className='catalog__productItem'
 										dataProduct={card}
 										onClose={onDeleteItem}
+										onAdd={addToBag}
 									/>
 								) : (
-									<ProductItem key={card.id} dataProduct={card} onClose={onDeleteItem} />
+									<ProductItem
+										key={card.id}
+										className='product-item'
+										dataProduct={card}
+										onClose={onDeleteItem}
+										onAdd={addToBag}
+									/>
 								)
 							)
 						) : (
@@ -80,4 +88,4 @@ const mapStateToProps = (state) => ({
 
 // }
 
-export default connect(mapStateToProps, { deleteItemInFavorites })(Favorites);
+export default connect(mapStateToProps, { deleteItemInFavorites, addToBag })(Favorites);

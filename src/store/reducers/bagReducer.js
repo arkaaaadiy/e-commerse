@@ -45,6 +45,18 @@ export const bagReducer = (state = initialState, action) => {
             return {
                 products: state.products.map(item => item.id === action.id ? {...item, count: item.count - 1}  : item)
             };
+        case 'ADD_TO_BAG':
+            return {
+                products: [...state.products, {
+                    id: action.item.id,
+                    photo: action.item.photo,
+                    name: action.item.name,
+                    count: 1,
+                    color: action.item.color,
+                    price: Math.round(action.item.price - (action.item.price * action.item.discont / 100)),
+                    size: action.item.size,
+                }]
+            };
         default:
             return state
     }

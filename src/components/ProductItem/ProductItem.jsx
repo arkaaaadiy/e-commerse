@@ -8,7 +8,7 @@ import ButtonLike from '../ButtonLike/ButtonLike';
 import classnames from 'classnames';
 
 const ProductItem = (props) => {
-	const { dataProduct, main, catalog, onClick, onClose } = props;
+	const { dataProduct, main, catalog, onClick, onClose, onAdd, className } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 
 	const onClickInner = () => {
@@ -19,8 +19,12 @@ const ProductItem = (props) => {
 		onClose(dataProduct.id)
 	}
 
+	const onAddHandler = () => {
+		onAdd(dataProduct)
+	}
+
 	return (
-		<div className='product-item'>
+		<div className={className}>
 			{soldOut && <div className='disablecard'></div>}
 			{soldOut && <div className='soldout'>Sorry, this item currently sold out</div>}
 			<div className={classnames('product-item__img', {'product-item__img-main': main})}>
@@ -72,7 +76,7 @@ const ProductItem = (props) => {
 					</svg>
 				</div>}
 				{!soldOut && !catalog && (
-					<div className='product-item__btnbag'>
+					<div onClick={onAddHandler} className='product-item__btnbag'>
 						<ButtonAddToBag />
 					</div>
 				)}

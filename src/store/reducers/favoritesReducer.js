@@ -9,7 +9,7 @@ const initialState = {
             photo: 'https://i.ibb.co/KG4PDKM/photo2.png',
             size: 'S',
             color: 'turquoise',
-            price: '749.00',
+            price: 749,
             rating: 2,
             voises: 12,
             newItem: 'true',

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './MyOrders.sass';
 import Heading from '../../../components/Heading/Heading';
 import Tag from '../../../components/Tag/Tag';

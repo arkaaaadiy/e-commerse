@@ -10,6 +10,7 @@ import SlideDown from '../../components/SlideDown/SlideDown';
 import bg from '../../assets/bgpercent.png';
 import { connect } from 'react-redux';
 import { addCount, subCount } from '../../store/actions/Bag';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Bag = (props) => {
 	const { data, addCount, subCount } = props;
@@ -82,7 +83,9 @@ const Bag = (props) => {
 					<div className='bag__label'>Total amount:</div>
 					<h3 className='bag__cost'>{total}$</h3>
 				</div>
+				<Link to='/checkout'>				
 				<Button>CHECK OUT</Button>
+				</Link>
 			</div>
 		</div>
 	);

@@ -36,7 +36,7 @@ const generateProductItem = () => {
         photo: faker.random.arrayElement(arrImage),
         size: ['XS', 'S', 'M', 'L', 'XL'],
         color: faker.fake('{{commerce.color}}'),
-        price: faker.fake('{{commerce.price}}'),
+        price: +faker.fake('{{commerce.price}}'),
         rating: getRandomNumber(5),
         voises: getRandomNumber(15),
         newItem: faker.fake('{{random.boolean}}'),

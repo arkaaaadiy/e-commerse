@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProfileLink.sass';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const ProfileLink = (props) => {
-	const { children, className, href } = props;
+	const { children, className, to } = props;
 	return (
 		<div className={className}>
-			<a href={href} className='profile-link'>
+			<Link to={to} className='profile-link'>
 				<div className='profile-link__text'>{children}</div>				
 				<svg
 					className='profile-link__arrow'
@@ -23,7 +24,7 @@ const ProfileLink = (props) => {
 						fill='#ABB4BD'
 					/>
 				</svg>
-			</a>
+			</Link>
 		</div>
 	);
 };

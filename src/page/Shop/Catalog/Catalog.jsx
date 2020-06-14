@@ -115,6 +115,7 @@ const Catalog = (props) => {
 							) : (
 								<ProductItem 
 									key={card.name + card.price} 
+									className='product-item'
 									dataProduct={card} 
 									catalog 
 									onClick={onShowSelect} 

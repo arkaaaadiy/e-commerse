@@ -1,9 +1,13 @@
 import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.sass'
-import Profile from './page/Profile/MyProfile/Profile';
+
+import photo from './assets/image.jpg';
+
 import SignUp from './containers/Auth/SignUp/SignUp';
 import Login from './containers/Auth/Login/Login'
 import ForgotPassword from './containers/Auth/ForgotPassword/component/ForgotPassword';
+
 import Topbar from './components/Topbar/Topbar';
 import OrderDetails from './page/Profile/OrderDetails/OrderDetails';
 import FiltersPage from './page/FiltersPage/FiltersPage';
@@ -12,10 +16,12 @@ import Categories from './page/Shop/Categories/Categories';
 import Catalog from './page/Shop/Catalog/Catalog';
 import Product from './page/Product/Product';
 import Bag from './page/Bag/Bag';
-import photo from './assets/image.jpg';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import Profile from './page/Profile/MyProfile/Profile';
 import AuthLayout from './hoc/AuthLayout';
 import Favorites from './page/Favorites/Favorites';
+import MyOrders from './page/Profile/MyOrders/MyOrders';
+import Сheckout from './page/Сheckout/Сheckout';
+import ShippingAdress from './page/ShippingAdress/ShippingAdress';
 
 function App() {
   const isAuthenticated = true
@@ -80,6 +86,9 @@ function App() {
       <Route path='/shop' component={Categories} />
       <Route path='/catalog' component={Catalog} />
       <Route path='/order-details' ><OrderDetails data={data} /></Route>
+      <Route path='/shipping' component={ShippingAdress} />
+      <Route path='/checkout' component={Сheckout} />
+      <Route path='/profile/myorders' component={MyOrders} />
       <Route path='/profile' component={Profile} />
       <Route path='/product' component={Product} />
       <Route path='/bag' component={Bag} />

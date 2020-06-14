@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Heading from '../../components/Heading/Heading';
 import Button from '../../components/Button/Button';
 import FedEx from '../../assets/icon/fedex.svg';

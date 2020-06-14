@@ -20,7 +20,7 @@ const Profile = props => {
             </div>
             </div>
             <div className="profile__links">
-                <ProfileLink>
+                <ProfileLink to={location => `${location.pathname}/myorders`}>
                     <p className="profile__text subheads">My orders</p>
                     <p className="profile__subtext helperText">Already have 12 orders</p>
                 </ProfileLink>   

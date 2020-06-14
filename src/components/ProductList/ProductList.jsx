@@ -7,7 +7,7 @@ import Labels from '../Label/Label';
 import ButtonLike from '../ButtonLike/ButtonLike';
 
 const ProductList = (props) => {
-	const { dataProduct, className, catalog, onClick, onClose } = props;
+	const { dataProduct, className, catalog, onClick, onClose, onAdd } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 
 	const onClickInner = () => {
@@ -18,6 +18,9 @@ const ProductList = (props) => {
 		onClose(dataProduct.id)
 	}
 
+	const onAddHandler = () => {
+		onAdd(dataProduct)
+	}
 	return (
 		<div className={className}>
 			<div className='product-list'>
@@ -69,7 +72,7 @@ const ProductList = (props) => {
 							</div>
 						)}
 						{!soldOut && !catalog && (
-							<div className='product-list__btnbag'>
+							<div onClick={onAddHandler} className='product-list__btnbag'>
 								<ButtonAddToBag />
 							</div>
 						)}
