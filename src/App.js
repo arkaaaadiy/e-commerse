@@ -72,7 +72,7 @@ function App() {
   if (isAuthenticated) {
    routes = ( 
    <>
-   <main>  
+   <main className='main'>  
       <Switch>
       <Route path='/filter' component={FiltersPage} />
       

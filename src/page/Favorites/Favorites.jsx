@@ -9,18 +9,19 @@ import ProductItem from '../../components/ProductItem/ProductItem';
 import FiltersPage from '../FiltersPage/FiltersPage';
 import classNames from 'classnames';
 
+import { deleteItemInFavorites } from '../../store/actions/Favorites';
+
 const Favorites = (props) => {
-	const { data } = props;
+	const { data, deleteItemInFavorites } = props;
 	const [listShow, setListShow] = useState(false);
-	const [select, setSelect] = useState(false);
 	const [filterShow, setFilterShow] = useState(false);
 
 	const onShowFiltersPage = () => {
 		setFilterShow(!filterShow);
 	};
 
-	const onShowSelect = () => {
-		setSelect(!select);
+	const onDeleteItem = (id) => {
+		deleteItemInFavorites(id);
 	};
 
 	return (
@@ -51,9 +52,14 @@ const Favorites = (props) => {
 						{data.length > 0 ? (
 							data.map((card) =>
 								listShow ? (
-									<ProductList key={card.id} className='catalog__productItem' dataProduct={card} />
+									<ProductList
+										key={card.id}
+										className='catalog__productItem'
+										dataProduct={card}
+										onClose={onDeleteItem}
+									/>
 								) : (
-									<ProductItem key={card.id} dataProduct={card} onClick={onShowSelect} />
+									<ProductItem key={card.id} dataProduct={card} onClose={onDeleteItem} />
 								)
 							)
 						) : (
@@ -67,11 +73,11 @@ const Favorites = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-	data: state.Favorites.data,
+	data: state.favorites.data,
 });
 
 // const mapDispatchToProps = {
 
 // }
 
-export default connect(mapStateToProps)(Favorites);
+export default connect(mapStateToProps, { deleteItemInFavorites })(Favorites);

@@ -7,11 +7,15 @@ import Labels from '../Label/Label';
 import ButtonLike from '../ButtonLike/ButtonLike';
 
 const ProductList = (props) => {
-	const { dataProduct, className, catalog, onClick } = props;
+	const { dataProduct, className, catalog, onClick, onClose } = props;
 	const { name, brand, color, size, price, rating, discont, newItem, voises, soldOut, photo } = dataProduct;
 
 	const onClickInner = () => {
 		onClick(dataProduct)
+	}
+
+	const onCloseHandler = () => {
+		onClose(dataProduct.id)
 	}
 
 	return (
@@ -52,7 +56,7 @@ const ProductList = (props) => {
 							</div>
 						</div>
 						{!catalog && (
-							<div className='product-list__close'>
+							<div onClick={onCloseHandler} className='product-list__close'>
 								<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 									<path
 										opacity='0.54'
@@ -85,4 +89,4 @@ ProductList.propTypes = {
 	dataProduct: PropTypes.object,
 };
 
-export default ProductList;
+export default React.memo(ProductList);

@@ -12,5 +12,5 @@ export default combineReducers({
     categories: categoriesReducer,
     product: productReducer,
     bag: bagReducer,
-    Favorites: favoritesReducer
+    favorites: favoritesReducer
 })
